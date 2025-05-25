@@ -642,9 +642,11 @@ body {
 }
 
 .instagram-btn svg {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+    flex-shrink: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
 }
 
 .instagram-gradient {
