@@ -577,11 +577,10 @@ body {
 }
 
 .avatar-circle {
-    width: 80px; /* PC 버전에서는 작은 크기 */
+    width: 80px;
     height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
     background: linear-gradient(135deg, #ff3366, #ff6b6b);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1269,5 +1268,40 @@ body {
     .instagram-btn svg {
         width: 16px;
         height: 16px;
+    }
+}
+
+/* PC 버전용 아바타 크기와 정렬 수정 */
+.ceo-profile .avatar-circle {
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+}
+
+.ceo-avatar {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+}
+
+.avatar-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+/* 모바일 버전용 미디어 쿼리 */
+@media (max-width: 768px) {
+    .ceo-profile .avatar-circle {
+        width: 150px !important;
+        height: 150px !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
     }
 }
