@@ -577,10 +577,11 @@ body {
 }
 
 .avatar-circle {
-    width: 80px;
+    width: 80px; /* PC 버전에서는 작은 크기 */
     height: 80px;
-    background: linear-gradient(135deg, #ff3366, #ff6b6b);
     border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff3366, #ff6b6b);
     display: flex;
     align-items: center;
     justify-content: center;
