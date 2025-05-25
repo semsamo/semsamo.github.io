@@ -1195,7 +1195,11 @@ body {
         max-width: 400px;
         height: 150px;
     }
-    
+    #gameCanvas {
+        position: relative;
+        pointer-events: auto;
+        touch-action: manipulation;
+        }
     .game-wrapper {
         padding: 32px 24px;
     }
