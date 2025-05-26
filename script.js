@@ -15,6 +15,41 @@ window.addEventListener('DOMContentLoaded', () => {
     const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     scrollIndicator.style.width = scrolled + '%';
   });
+  
+  // ==================== 카운트다운 타이머 ====================
+  function updateCountdown() {
+    // 한국 시간 2025년 6월 28일 19:00 (오후 7시)
+    const targetDate = new Date('2025-06-28T19:00:00+09:00');
+    const now = new Date();
+    
+    // 남은 시간 계산 (밀리초 단위)
+    const diff = targetDate.getTime() - now.getTime();
+    
+    // 이미 지났는지 확인
+    if (diff <= 0) {
+      $('#countdown-days').text('00');
+      $('#countdown-hours').text('00');
+      $('#countdown-minutes').text('00');
+      $('#countdown-seconds').text('00');
+      return;
+    }
+    
+    // 일, 시간, 분, 초 계산
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    // 화면에 표시
+    $('#countdown-days').text(days.toString().padStart(2, '0'));
+    $('#countdown-hours').text(hours.toString().padStart(2, '0'));
+    $('#countdown-minutes').text(minutes.toString().padStart(2, '0'));
+    $('#countdown-seconds').text(seconds.toString().padStart(2, '0'));
+  }
+  
+  // 초기화 및 1초마다 업데이트
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
