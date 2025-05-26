@@ -2,7 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>SEMSAMO COMPANY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -10,21 +13,6 @@
 </head>
 <body>
     <div class="scroll-indicator"></div>
-    
-    <!-- 배경음악 -->
-    <audio id="bgm" loop>
-        <source src="audio/background.mp3" type="audio/mpeg">
-        <source src="audio/background.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <div class="audio-control">
-        <button id="audio-toggle" class="audio-toggle" aria-label="배경음악 재생/정지">
-            <span class="audio-icon audio-off">
-                <i class="audio-icon-bar"></i>🎵
-            </span>
-        </button>
-    </div>
     
     <nav class="nav">
         <div class="nav-container">
