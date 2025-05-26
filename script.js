@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+  console.log('페이지 로드 완료');
+  
   // ==================== 스크롤 및 기본 기능 ====================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -27,10 +29,10 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // 이미 지났는지 확인
     if (diff <= 0) {
-      $('#countdown-days').text('00');
-      $('#countdown-hours').text('00');
-      $('#countdown-minutes').text('00');
-      $('#countdown-seconds').text('00');
+      document.getElementById('countdown-days').textContent = '00';
+      document.getElementById('countdown-hours').textContent = '00';
+      document.getElementById('countdown-minutes').textContent = '00';
+      document.getElementById('countdown-seconds').textContent = '00';
       return;
     }
     
@@ -40,16 +42,27 @@ window.addEventListener('DOMContentLoaded', () => {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
+    // 숫자 앞에 0 추가하는 함수
+    function padZero(num) {
+      return num.toString().padStart(2, '0');
+    }
+    
     // 화면에 표시
-    $('#countdown-days').text(days.toString().padStart(2, '0'));
-    $('#countdown-hours').text(hours.toString().padStart(2, '0'));
-    $('#countdown-minutes').text(minutes.toString().padStart(2, '0'));
-    $('#countdown-seconds').text(seconds.toString().padStart(2, '0'));
+    document.getElementById('countdown-days').textContent = padZero(days);
+    document.getElementById('countdown-hours').textContent = padZero(hours);
+    document.getElementById('countdown-minutes').textContent = padZero(minutes);
+    document.getElementById('countdown-seconds').textContent = padZero(seconds);
+    
+    // 콘솔에 로그 출력 (테스트용)
+    console.log(`시간: ${padZero(days)}일 ${padZero(hours)}시간 ${padZero(minutes)}분 ${padZero(seconds)}초`);
   }
   
   // 초기화 및 1초마다 업데이트
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // DOM이 완전히 로드된 후 실행하도록 설정
+  setTimeout(function() {
+    updateCountdown(); // 즉시 실행
+    setInterval(updateCountdown, 1000); // 1초마다 업데이트
+  }, 500); // 0.5초 뒤에 시작
 
   const canvas = document.getElementById('gameCanvas');
   const ctx = canvas.getContext('2d');
