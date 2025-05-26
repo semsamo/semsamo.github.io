@@ -16,6 +16,90 @@ window.addEventListener('DOMContentLoaded', () => {
     scrollIndicator.style.width = scrolled + '%';
   });
   
+  // ==================== 배경음악 기능 ====================
+  const bgm = document.getElementById('bgm');
+  const audioToggle = document.getElementById('audio-toggle');
+  const audioIcon = audioToggle.querySelector('.audio-icon');
+  
+  // 기본 설정
+  let audioEnabled = false;
+  bgm.volume = 0; // 초기 문음으로 설정
+  
+  // 자동재생 시도 (무음으로)
+  const attemptAutoplay = () => {
+    bgm.play()
+      .then(() => {
+        console.log('무음 자동재생 성공');
+        // 자동재생은 성공했지만 무음 상태임
+        audioToggle.classList.add('autoplaying');
+        audioEnabled = true;
+      })
+      .catch(error => {
+        console.log('자동재생 실패, 사용자 인터랙션 필요:', error);
+      });
+  };
+  
+  // 페이지 로드 후 자동재생 시도
+  setTimeout(attemptAutoplay, 1000);
+  
+  // 배경음악 토글 버튼 클릭 이벤트
+  audioToggle.addEventListener('click', () => {
+    if (audioEnabled) {
+      // 이미 재생 중이거나 자동재생 상태
+      if (bgm.paused) {
+        // 재생 시작 & 볼륨 설정
+        bgm.volume = 0.3;
+        bgm.play();
+        audioIcon.classList.add('audio-on');
+      } else {
+        // 일시정지
+        bgm.pause();
+        audioIcon.classList.remove('audio-on');
+      }
+    } else {
+      // 처음 클릭시 설정
+      bgm.volume = 0.3; // 볼륨 30%로 설정
+      bgm.play()
+        .then(() => {
+          audioEnabled = true;
+          audioIcon.classList.add('audio-on');
+        })
+        .catch(error => {
+          console.error('오디오 재생 실패:', error);
+        });
+    }
+  });
+  
+  // 페이지 이탁 시 오디오 일시정지
+  document.addEventListener('visibilitychange', () => {
+    if (audioEnabled && bgm && !bgm.paused) {
+      if (document.hidden) {
+        bgm.pause();
+      } else {
+        bgm.play().catch(() => {});
+      }
+    }
+  });
+  
+  // 스크롤 이벤트나 클릭 이벤트에서 자동재생 상태에서 소리 활성화
+  const enableSound = () => {
+    if (audioEnabled && bgm.volume === 0 && !bgm.paused) {
+      // 재생은 되고 있지만 무음인 상태에서 소리를 활성화
+      bgm.volume = 0.3;
+      audioIcon.classList.add('audio-on');
+      audioToggle.classList.remove('autoplaying');
+      // 한 번만 실행하고 이벤트 제거
+      window.removeEventListener('click', enableSound);
+      window.removeEventListener('scroll', enableSound);
+      window.removeEventListener('touchstart', enableSound);
+    }
+  };
+  
+  // 사용자 인터랙션 이벤트 연결
+  window.addEventListener('click', enableSound);
+  window.addEventListener('scroll', enableSound);
+  window.addEventListener('touchstart', enableSound);
+  
   // ==================== 카운트다운 타이머 ====================
   function updateCountdown() {
     // 한국 시간 2025년 6월 28일 19:00 (오후 7시)

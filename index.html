@@ -11,6 +11,21 @@
 <body>
     <div class="scroll-indicator"></div>
     
+    <!-- 배경음악 -->
+    <audio id="bgm" loop>
+        <source src="audio/background.mp3" type="audio/mpeg">
+        <source src="audio/background.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div class="audio-control">
+        <button id="audio-toggle" class="audio-toggle" aria-label="배경음악 재생/정지">
+            <span class="audio-icon audio-off">
+                <i class="audio-icon-bar"></i>🎵
+            </span>
+        </button>
+    </div>
+    
     <nav class="nav">
         <div class="nav-container">
             <div class="logo">SEMSAMO</div>
