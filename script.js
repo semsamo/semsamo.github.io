@@ -3,6 +3,10 @@ const cursor = document.querySelector('.custom-cursor');
 let mouseX = 0, mouseY = 0;
 let cursorX = 0, cursorY = 0;
 
+// 초기 커서 위치 설정
+cursor.style.left = '0px';
+cursor.style.top = '0px';
+
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -11,11 +15,18 @@ document.addEventListener('mousemove', (e) => {
 function animateCursor() {
     cursorX += (mouseX - cursorX) * 0.1;
     cursorY += (mouseY - cursorY) * 0.1;
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
+    
+    // transform 대신 left, top 사용하여 위치 설정
+    cursor.style.left = cursorX - 10 + 'px'; // 커서 중앙 정렬을 위해 -10px
+    cursor.style.top = cursorY - 10 + 'px';  // 커서 중앙 정렬을 위해 -10px
+    
     requestAnimationFrame(animateCursor);
 }
-animateCursor();
+
+// 페이지 로드 후 커서 애니메이션 시작
+document.addEventListener('DOMContentLoaded', () => {
+    animateCursor();
+});
 
 // 마그네틱 효과
 const magneticElements = document.querySelectorAll('.floating-element, .enter-btn');
@@ -76,17 +87,28 @@ document.querySelectorAll('.floating-element').forEach(element => {
     });
 });
 
-// 패럴랙스 효과
+// 패럴랙스 효과 개선
+let isParallaxActive = false;
 document.addEventListener('mousemove', (e) => {
-    const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    if (isParallaxActive) return;
     
-    document.querySelectorAll('.floating-element').forEach((element, index) => {
-        const speed = (index + 1) * 0.5;
-        const x = mouseX * speed * 10;
-        const y = mouseY * speed * 10;
+    isParallaxActive = true;
+    requestAnimationFrame(() => {
+        const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
         
-        element.style.transform += ` translate(${x}px, ${y}px)`;
+        document.querySelectorAll('.floating-element').forEach((element, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = mouseX * speed * 10;
+            const y = mouseY * speed * 10;
+            
+            // 기존 transform 값을 덮어쓰지 않고 추가
+            const currentTransform = element.style.transform || '';
+            const baseTransform = currentTransform.replace(/translate\([^)]*\)/g, '');
+            element.style.transform = baseTransform + ` translate(${x}px, ${y}px)`;
+        });
+        
+        isParallaxActive = false;
     });
 });
 
@@ -94,7 +116,6 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' || e.code === 'Enter') {
         e.preventDefault();
-        // 여기에 원하는 동작 추가 가능
         console.log('키보드 인터랙션 활성화');
     }
 });
@@ -114,4 +135,7 @@ if ('ontouchstart' in window) {
             this.style.transform = this.style.transform.replace(' scale(1.05)', '');
         });
     });
+} else {
+    // 데스크톱에서만 커스텀 커서 활성화
+    animateCursor();
 }
