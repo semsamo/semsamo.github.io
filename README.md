@@ -1,1 +1,0 @@
-# semsamo.github.io
