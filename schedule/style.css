@@ -132,7 +132,6 @@ body {
 
 .dday-number {
     font-family: 'Inter', sans-serif;
-    font-size: 3rem;
     font-weight: 800;
     background: linear-gradient(135deg, #ffffff 0%, #ff3366 50%, #ff6b6b 100%);
     -webkit-background-clip: text;
@@ -140,9 +139,13 @@ body {
     background-clip: text;
     margin-bottom: 10px;
     letter-spacing: -2px;
-    line-height: 1;
+    line-height: 1.2;
     position: relative;
     animation: ddayGlow 3s ease-in-out infinite alternate;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes ddayGlow {
@@ -214,75 +217,6 @@ body {
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
     text-decoration: none;
     color: #ffffff;
-}
-
-/* 스케줄 테이블 섹션 */
-.schedule-section {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 40px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.schedule-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #ffffff;
-}
-
-.schedule-table {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.schedule-row {
-    display: grid;
-    grid-template-columns: 1fr 80px 120px 1.5fr;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.schedule-row:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.schedule-row:last-child {
-    border-bottom: none;
-}
-
-.schedule-header {
-    background: rgba(255, 255, 255, 0.1);
-    font-weight: 600;
-}
-
-.schedule-header:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.schedule-row.special {
-    background: rgba(102, 126, 234, 0.1);
-    border-left: 4px solid #667eea;
-}
-
-.schedule-row.special:hover {
-    background: rgba(102, 126, 234, 0.15);
-}
-
-.schedule-cell {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-}
-
-.schedule-header .schedule-cell {
-    color: #ffffff;
-    font-weight: 600;
 }
 
 /* 캘린더 섹션 */
@@ -507,7 +441,7 @@ body {
         font-size: 16px;
     }
     
-    .performance-info, .schedule-section, .calendar-section {
+    .performance-info, .calendar-section {
         padding: 25px;
         border-radius: 15px;
     }
@@ -519,48 +453,6 @@ body {
     .perf-meta {
         grid-template-columns: 1fr;
         gap: 15px;
-    }
-    
-    .schedule-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .schedule-cell {
-        padding: 10px 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .schedule-cell:last-child {
-        border-bottom: none;
-    }
-    
-    .schedule-row:not(.schedule-header) .schedule-cell:first-child::before {
-        content: '날짜: ';
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 12px;
-    }
-    
-    .schedule-row:not(.schedule-header) .schedule-cell:nth-child(2)::before {
-        content: '요일: ';
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 12px;
-    }
-    
-    .schedule-row:not(.schedule-header) .schedule-cell:nth-child(3)::before {
-        content: '시간: ';
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 12px;
-    }
-    
-    .schedule-row:not(.schedule-header) .schedule-cell:nth-child(4)::before {
-        content: '비고: ';
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 12px;
-    }
-    
-    .schedule-header {
-        display: none;
     }
     
     .ticket-buttons {
@@ -595,10 +487,6 @@ body {
         font-size: 1.2rem;
     }
 
-    .dday-number {
-        font-size: 2.5rem;
-    }
-    
     .dday-section {
         padding: 20px;
         margin: 20px 0;

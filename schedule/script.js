@@ -5,25 +5,63 @@ document.addEventListener("DOMContentLoaded", function () {
         const targetDate = new Date('2025-06-28T19:00:00+09:00');
         const now = new Date();
         
-        // 날짜 차이 계산 (밀리초를 일수로 변환)
+        // 시간 차이 계산 (밀리초)
         const diffTime = targetDate.getTime() - now.getTime();
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         
         const ddayElement = document.getElementById('dday-number');
         
-        if (diffDays > 0) {
-            ddayElement.textContent = `D-${diffDays}`;
-        } else if (diffDays === 0) {
-            ddayElement.textContent = 'D-Day';
+        if (diffTime > 0) {
+            // 남은 시간 계산
+            const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diffTime % (1000 * 60)) / 1000);
+            
+            if (days > 0) {
+                ddayElement.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+                        <span style="font-size: 3rem; font-weight: 800; line-height: 1;">D-${days}</span>
+                        <span style="font-size: 2.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 3px 6px rgba(0,0,0,0.5); letter-spacing: 2px;">${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>
+                    </div>
+                `;
+            } else {
+                ddayElement.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+                        <span style="font-size: 2.5rem; font-weight: 800; line-height: 1;">D-Day</span>
+                        <span style="font-size: 3rem; font-weight: 800; color: #ffffff; text-shadow: 0 3px 6px rgba(0,0,0,0.5); letter-spacing: 2px;">${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>
+                    </div>
+                `;
+            }
         } else {
-            ddayElement.textContent = `D+${Math.abs(diffDays)}`;
+            // 공연이 시작된 후
+            const pastTime = Math.abs(diffTime);
+            const days = Math.floor(pastTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((pastTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((pastTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((pastTime % (1000 * 60)) / 1000);
+            
+            if (days > 0) {
+                ddayElement.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+                        <span style="font-size: 3rem; font-weight: 800; line-height: 1;">D+${days}</span>
+                        <span style="font-size: 2.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 3px 6px rgba(0,0,0,0.5); letter-spacing: 2px;">${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>
+                    </div>
+                `;
+            } else {
+                ddayElement.innerHTML = `
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+                        <span style="font-size: 2.2rem; font-weight: 800; line-height: 1;">공연 진행중</span>
+                        <span style="font-size: 3rem; font-weight: 800; color: #ffffff; text-shadow: 0 3px 6px rgba(0,0,0,0.5); letter-spacing: 2px;">${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>
+                    </div>
+                `;
+            }
         }
     }
 
     // D-Day 초기화 및 업데이트
     updateDDay();
-    // 매 시간마다 업데이트 (하루에 한 번씩 변경되므로)
-    setInterval(updateDDay, 1000 * 60 * 60);
+    // 매초마다 업데이트
+    setInterval(updateDDay, 1000);
 
     // Little Jack 뮤지컬 스케줄 데이터 (실제 스케줄만 포함)
     const scheduleEvents = [
