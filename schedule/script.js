@@ -132,7 +132,52 @@ document.addEventListener("DOMContentLoaded", function () {
             end: '2025-07-26T21:30:00',
             allDay: false,
             className: 'special-event'
-        }
+        },
+        {
+            title: '포스터 증정',
+            start: '2025-08-01T20:00:00',
+            end: '2025-08-01T22:30:00',
+            allDay: false
+        },
+        {
+            title: '포스터 증정',
+            start: '2025-08-03T18:00:00',
+            end: '2025-08-03T20:30:00',
+            allDay: false
+        },
+        {
+            title: '싱어롱 데이',
+            start: '2025-08-05T20:00:00',
+            end: '2025-08-05T22:30:00',
+            allDay: false,
+            className: 'special-event'
+        },
+        {
+            title: '싱어롱 데이',
+            start: '2025-08-09T15:00:00',
+            end: '2025-08-09T16:30:00',
+            allDay: false,
+            className: 'special-event'
+        },
+        {
+            title: '럭키드로우',
+            start: '2025-08-12T20:00:00',
+            end: '2025-08-12T22:30:00',
+            allDay: false
+        },
+        {
+            title: '럭키드로우',
+            start: '2025-08-15T14:00:00',
+            end: '2025-08-15T15:30:00',
+            allDay: false
+        },
+        {
+            title: '스페셜 커튼콜',
+            start: '2025-08-16T19:00:00',
+            end: '2025-08-16T21:30:00',
+            allDay: false,
+            className: 'special-event'
+        },
     ];
 
     // FullCalendar 초기화
