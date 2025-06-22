@@ -1,141 +1,257 @@
-// 커스텀 커서
-const cursor = document.querySelector('.custom-cursor');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
+let calendar;
 
-// 초기 커서 위치 설정
-cursor.style.left = '0px';
-cursor.style.top = '0px';
+document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    // Little Jack 뮤지컬 스케줄 데이터
+    const events = [
+        // 6월 스케줄
+        {
+            title: '19:00 리틀잭',
+            start: '2025-06-28',
+            className: 'event-special',
+            time: '19:00',
+            detail: '첫공 무대인사',
+            location: '뮤지컬 Little Jack'
+        },
+
+        // 7월 스케줄
+        {
+            title: '20:00 리틀잭',
+            start: '2025-07-02',
+            className: 'event-special',
+            time: '20:00',
+            detail: '커튼콜',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-07-04',
+            className: 'event-special',
+            time: '20:00',
+            detail: '커튼콜',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '16:00 리틀잭',
+            start: '2025-07-09',
+            className: 'event-concert',
+            time: '16:00',
+            detail: '보이스카드 증정',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-07-11',
+            className: 'event-concert',
+            time: '20:00',
+            detail: '보이스카드 증정',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '16:00 리틀잭',
+            start: '2025-07-16',
+            className: 'event-tv',
+            time: '16:00',
+            detail: '더블적립',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-07-16',
+            className: 'event-tv',
+            time: '20:00',
+            detail: '더블적립',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '18:00 리틀잭',
+            start: '2025-07-20',
+            className: 'event-tv',
+            time: '18:00',
+            detail: '더블적립',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '16:00 리틀잭',
+            start: '2025-07-23',
+            className: 'event-special',
+            time: '16:00',
+            detail: '스페셜 커튼콜',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '19:00 리틀잭',
+            start: '2025-07-26',
+            className: 'event-special',
+            time: '19:00',
+            detail: '스페셜 커튼콜',
+            location: '뮤지컬 Little Jack'
+        },
+
+        // 8월 스케줄
+        {
+            title: '20:00 리틀잭',
+            start: '2025-08-01',
+            className: 'event-concert',
+            time: '20:00',
+            detail: '포스터 증정',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '18:00 리틀잭',
+            start: '2025-08-03',
+            className: 'event-concert',
+            time: '18:00',
+            detail: '포스터 증정',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-08-05',
+            className: 'event-special',
+            time: '20:00',
+            detail: '싱어롱 데이',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '15:00 리틀잭',
+            start: '2025-08-09',
+            className: 'event-special',
+            time: '15:00',
+            detail: '싱어롱 데이',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-08-12',
+            className: 'event-festival',
+            time: '20:00',
+            detail: '럭키드로우',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '14:00 리틀잭',
+            start: '2025-08-15',
+            className: 'event-festival',
+            time: '14:00',
+            detail: '럭키드로우',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '19:00 리틀잭',
+            start: '2025-08-16',
+            className: 'event-special',
+            time: '19:00',
+            detail: '스페셜 커튼콜',
+            location: '뮤지컬 Little Jack'
+        }
+    ];
+
+    calendar = new FullCalendar.Calendar(calendarEl, {
+        headerToolbar: false,
+        initialView: 'dayGridMonth',
+        locale: 'ko',
+        events: events,
+        height: 'auto',
+        dayMaxEvents: false,
+        eventDisplay: 'block',
+
+        dateClick: function (info) {
+            const clickedDate = info.dateStr;
+            const dayEvents = events.filter(event => event.start === clickedDate);
+
+            if (dayEvents.length > 0) {
+                showEventModal(clickedDate, dayEvents);
+            }
+        },
+
+        eventClick: function (info) {
+            const event = info.event;
+            const eventData = events.find(e => e.title === event.title && e.start === event.startStr);
+            showEventModal(event.startStr, [eventData]);
+        },
+
+        datesSet: function (info) {
+            updateMonthTitle(info.start);
+        }
+    });
+
+    calendar.render();
+
+    // 네비게이션 버튼 이벤트
+    document.getElementById('prevBtn').addEventListener('click', function () {
+        calendar.prev();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function () {
+        calendar.next();
+    });
+
+    document.getElementById('todayBtn').addEventListener('click', function () {
+        calendar.today();
+    });
 });
 
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.1;
-    cursorY += (mouseY - cursorY) * 0.1;
-    
-    // transform 대신 left, top 사용하여 위치 설정
-    cursor.style.left = cursorX - 10 + 'px'; // 커서 중앙 정렬을 위해 -10px
-    cursor.style.top = cursorY - 10 + 'px';  // 커서 중앙 정렬을 위해 -10px
-    
-    requestAnimationFrame(animateCursor);
+function updateMonthTitle(date) {
+    const options = { year: 'numeric', month: 'long' };
+    const title = date.toLocaleDateString('en-US', options);
+    document.getElementById('monthTitle').textContent = title;
 }
 
-// 페이지 로드 후 커서 애니메이션 시작
-document.addEventListener('DOMContentLoaded', () => {
-    animateCursor();
-});
+function showEventModal(date, dayEvents) {
+    const modal = document.getElementById('eventModal');
+    const modalDate = document.getElementById('modalDate');
+    const eventList = document.getElementById('eventList');
 
-// 마그네틱 효과
-const magneticElements = document.querySelectorAll('.floating-element, .enter-btn');
+    // 날짜 포맷팅
+    const dateObj = new Date(date);
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1;
+    const day = dateObj.getDate();
+    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+    const dayName = dayNames[dateObj.getDay()];
 
-magneticElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2)';
-        cursor.style.background = 'rgba(255, 255, 255, 0.5)';
+    modalDate.textContent = `${year}.${month}.${day}(${dayName})`;
+
+    // 이벤트 리스트 생성
+    eventList.innerHTML = '';
+    dayEvents.forEach(event => {
+        const listItem = document.createElement('li');
+        listItem.className = 'event-item';
+        listItem.innerHTML = `
+            <div class="event-time">${event.time || ''} - 뮤지컬 리틀잭</div>
+            <div class="event-name">${event.detail}</div>
+        `;
+        eventList.appendChild(listItem);
     });
-    
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursor.style.background = 'rgba(255, 255, 255, 0.8)';
-        element.style.transform = '';
-    });
-    
-    element.addEventListener('mousemove', (e) => {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        if (element.classList.contains('enter-btn')) {
-            element.style.transform = `translateX(-50%) translate(${x * 0.3}px, ${y * 0.3}px)`;
-        } else {
-            element.style.transform += ` translate(${x * 0.2}px, ${y * 0.2}px)`;
-        }
-    });
-});
 
-// 클릭 이펙트 및 링크 기능
-document.querySelectorAll('.floating-element').forEach(element => {
-    element.addEventListener('click', function() {
-        this.style.transform += ' scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = this.style.transform.replace(' scale(0.95)', '');
-        }, 150);
+    modal.style.display = 'block';
+}
 
-        // Schedule 링크 처리
-        if (this.classList.contains('element1')) {
-            setTimeout(() => {
-                window.location.href = '/schedule/index.html';
-            }, 200);
-        }
-        
-        // Artist 링크 처리
-        if (this.classList.contains('element2')) {
-            setTimeout(() => {
-                window.location.href = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjky&pkid=1&os=174396&qvt=0&query=%EB%B0%95%EC%84%B8%EB%AF%B8';
-            }, 200);
-        }
+function closeModal() {
+    document.getElementById('eventModal').style.display = 'none';
+}
 
-        // Instagram 링크 처리
-        if (this.classList.contains('element3')) {
-            setTimeout(() => {
-                window.location.href = 'https://www.instagram.com/1_0_0_8_/';
-            }, 200);
-        }
-    });
-});
+function goBack() {
+    if (history.length > 1) {
+        history.back();
+    } else {
+        window.location.href = '/';
+    }
+}
 
-// 패럴랙스 효과 개선
-let isParallaxActive = false;
-document.addEventListener('mousemove', (e) => {
-    if (isParallaxActive) return;
-    
-    isParallaxActive = true;
-    requestAnimationFrame(() => {
-        const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-        
-        document.querySelectorAll('.floating-element').forEach((element, index) => {
-            const speed = (index + 1) * 0.5;
-            const x = mouseX * speed * 10;
-            const y = mouseY * speed * 10;
-            
-            // 기존 transform 값을 덮어쓰지 않고 추가
-            const currentTransform = element.style.transform || '';
-            const baseTransform = currentTransform.replace(/translate\([^)]*\)/g, '');
-            element.style.transform = baseTransform + ` translate(${x}px, ${y}px)`;
-        });
-        
-        isParallaxActive = false;
-    });
-});
+// 모달 외부 클릭시 닫기
+window.onclick = function (event) {
+    const modal = document.getElementById('eventModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
 
-// 키보드 인터랙션
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' || e.code === 'Enter') {
-        e.preventDefault();
-        console.log('키보드 인터랙션 활성화');
+// ESC 키로 모달 닫기
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeModal();
     }
 });
-
-// 모바일 터치 지원
-if ('ontouchstart' in window) {
-    document.body.style.cursor = 'auto';
-    cursor.style.display = 'none';
-    
-    // 터치 이벤트 추가
-    document.querySelectorAll('.floating-element').forEach(element => {
-        element.addEventListener('touchstart', function() {
-            this.style.transform += ' scale(1.05)';
-        });
-        
-        element.addEventListener('touchend', function() {
-            this.style.transform = this.style.transform.replace(' scale(1.05)', '');
-        });
-    });
-} else {
-    // 데스크톱에서만 커스텀 커서 활성화
-    animateCursor();
-}
