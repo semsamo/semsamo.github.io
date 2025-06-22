@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭',
             start: '2025-06-28',
-            className: 'event-special',
+            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '첫공 무대인사',
             location: '뮤지컬 Little Jack'
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-02',
-            className: 'event-special',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '커튼콜',
             location: '뮤지컬 Little Jack'
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-04',
-            className: 'event-special',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '커튼콜',
             location: '뮤지컬 Little Jack'
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-09',
-            className: 'event-concert',
+            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '보이스카드 증정',
             location: '뮤지컬 Little Jack'
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-11',
-            className: 'event-concert',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '보이스카드 증정',
             location: '뮤지컬 Little Jack'
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-16',
-            className: 'event-tv',
+            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-16',
-            className: 'event-tv',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 리틀잭',
             start: '2025-07-20',
-            className: 'event-tv',
+            className: 'event-time-18',  // 18시 공연 클래스
             time: '18:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-23',
-            className: 'event-special',
+            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭',
             start: '2025-07-26',
-            className: 'event-special',
+            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-01',
-            className: 'event-concert',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '포스터 증정',
             location: '뮤지컬 Little Jack'
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 리틀잭',
             start: '2025-08-03',
-            className: 'event-concert',
+            className: 'event-time-18',  // 18시 공연 클래스
             time: '18:00',
             detail: '포스터 증정',
             location: '뮤지컬 Little Jack'
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-05',
-            className: 'event-special',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '싱어롱 데이',
             location: '뮤지컬 Little Jack'
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 리틀잭',
             start: '2025-08-09',
-            className: 'event-special',
+            className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '싱어롱 데이',
             location: '뮤지컬 Little Jack'
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-12',
-            className: 'event-festival',
+            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '럭키드로우',
             location: '뮤지컬 Little Jack'
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 리틀잭',
             start: '2025-08-15',
-            className: 'event-festival',
+            className: 'event-time-14',  // 14시 공연 클래스
             time: '14:00',
             detail: '럭키드로우',
             location: '뮤지컬 Little Jack'
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭',
             start: '2025-08-16',
-            className: 'event-special',
+            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
