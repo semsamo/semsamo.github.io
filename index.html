@@ -4,68 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박세미 - Artist Schedule</title>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/main.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="title">Artist Schedule</h1>
+<div class="container">
+    <div class="header">
+        <h1 class="title">Artist Schedule</h1>
+    </div>
+
+    <div class="schedule-wrap">
+        <div class="calendar-container">
+            <div class="custom-header">
+                <div class="month-title" id="monthTitle">June 2025</div>
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" id="prevBtn">‹</button>
+                    <button class="nav-btn today-btn" id="todayBtn">오늘</button>
+                    <button class="nav-btn next" id="nextBtn">›</button>
+                </div>
+            </div>
+            <div id="calendar"></div>
+            <div class="schedule-notice">상기 스케줄은 배우 및 제작사의 사정으로 사전 공지 없이 변경될 수 있습니다.</div>
         </div>
 
-        <div class="schedule-wrap">
-            <div class="calendar-container">
-                <div class="custom-header">
-                    <div class="month-title" id="monthTitle">June 2025</div>
-                    <div class="nav-buttons">
-                        <button class="nav-btn prev" id="prevBtn">‹</button>
-                        <button class="nav-btn today-btn" id="todayBtn">오늘</button>
-                        <button class="nav-btn next" id="nextBtn">›</button>
-                    </div>
-                </div>
-                <div id="calendar"></div>
-            </div>
-            
-            <div class="artist-section">
-                <a href="https://www.instagram.com/1_0_0_8_/" target="_blank" class="artist-image">
-                    <img src="/img/semsem.png" alt="박세미">
-                </a>
-                
-                <div class="booking-buttons">
-                    <a href="http://ticket.yes24.com/Perf/53723" target="_blank" class="booking-btn yes24">
-                        <span class="booking-btn-icon">🎫</span>
-                        <span class="booking-btn-text">
+        <div class="artist-section">
+            <a href="https://www.instagram.com/1_0_0_8_/" target="_blank" class="artist-image">
+                <img src="/img/semsem.png" alt="박세미">
+            </a>
+
+            <div class="booking-buttons">
+                <a href="http://ticket.yes24.com/Perf/53723" target="_blank" class="booking-btn yes24">
+                    <span class="booking-btn-icon">🎫</span>
+                    <span class="booking-btn-text">
                             <span class="booking-btn-platform">YES24</span>
                             <span class="booking-btn-action">예매하기</span>
                         </span>
-                    </a>
-                    <a href="https://tickets.interpark.com/goods/25006347" target="_blank" class="booking-btn interpark">
-                        <span class="booking-btn-icon">🎭</span>
-                        <span class="booking-btn-text">
+                </a>
+                <a href="https://tickets.interpark.com/goods/25006347" target="_blank" class="booking-btn interpark">
+                    <span class="booking-btn-icon">🎭</span>
+                    <span class="booking-btn-text">
                             <span class="booking-btn-platform">인터파크</span>
                             <span class="booking-btn-action">예매하기</span>
                         </span>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- 이벤트 상세 모달 -->
-    <div id="eventModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="modalDate"></div>
-                <button class="close-btn" onclick="closeModal()"></button>
-            </div>
-            <div class="modal-body">
-                <ul class="event-list" id="eventList"></ul>
-            </div>
+<!-- 이벤트 상세 모달 -->
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title" id="modalDate"></div>
+            <button class="close-btn" onclick="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+            <ul class="event-list" id="eventList"></ul>
         </div>
     </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
