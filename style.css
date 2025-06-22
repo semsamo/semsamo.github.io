@@ -23,6 +23,21 @@ body {
     color: #2d3748;
     margin-bottom: 30px;
 }
+.schedule-notice {
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .schedule-notice {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+}
 
 .back-btn {
     background: none;
