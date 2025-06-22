@@ -23,21 +23,6 @@ body {
     color: #2d3748;
     margin-bottom: 30px;
 }
-.schedule-notice {
-    padding: 15px 20px;
-    font-size: 13px;
-    color: #666;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-    font-style: italic;
-}
-
-@media (max-width: 768px) {
-    .schedule-notice {
-        padding: 12px 15px;
-        font-size: 12px;
-    }
-}
 
 .back-btn {
     background: none;
@@ -317,24 +302,34 @@ body {
     white-space: nowrap !important;
 }
 
-/* 이벤트 색상 */
-.fc-event.event-special {
-    background: #FF6B6B !important;
+/* 이벤트 시간별 색상 */
+.fc-event.event-time-14 {
+    background: #4CAF50 !important; /* 초록색 */
     color: white !important;
 }
 
-.fc-event.event-concert {
-    background: #7B68EE !important;
+.fc-event.event-time-15 {
+    background: #8BC34A !important; /* 라이트 그린 */
     color: white !important;
 }
 
-.fc-event.event-tv {
-    background: #87CEEB !important;
+.fc-event.event-time-16 {
+    background: #2196F3 !important; /* 파란색 */
     color: white !important;
 }
 
-.fc-event.event-festival {
-    background: #DDA0DD !important;
+.fc-event.event-time-18 {
+    background: #9C27B0 !important; /* 보라색 */
+    color: white !important;
+}
+
+.fc-event.event-time-19 {
+    background: #FF5722 !important; /* 주황색 */
+    color: white !important;
+}
+
+.fc-event.event-time-20 {
+    background: #F44336 !important; /* 빨간색 */
     color: white !important;
 }
 
@@ -417,6 +412,15 @@ body {
     color: #333;
 }
 
+.schedule-notice {
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 15px;
@@ -492,6 +496,11 @@ body {
     .fc-event {
         font-size: 10px !important;
         padding: 1px 4px !important;
+    }
+
+    .schedule-notice {
+        padding: 12px 15px;
+        font-size: 12px;
     }
 }
 
