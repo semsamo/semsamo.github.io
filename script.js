@@ -162,6 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
         height: 'auto',
         dayMaxEvents: false,
         eventDisplay: 'block',
+        fixedWeekCount: false, // 달력의 주 수를 해당 월에 맞게 자동으로 조정
+        showNonCurrentDates: false, // 현재 월에 속하지 않는 날짜 숨기기
         eventContent: function(arg) {
             // 시간 정보 추출
             let timeText = arg.event.extendedProps.time || '';
@@ -230,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('todayBtn').addEventListener('click', function () {
-        // 2025년 6월로 이동 (today 버튼을 누르면 항상 2025년 6월로 이동)
-        calendar.gotoDate(initialDate);
+        // 실제 오늘 날짜로 이동
+        calendar.today();
     });
 });
 
