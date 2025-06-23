@@ -3,6 +3,11 @@ let calendar;
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
 
+    // 현재 날짜를 한국 시간으로 설정
+    const now = new Date();
+    // 2025년 6월로 초기화 (월은 0부터 시작하므로 5가 6월)
+    const initialDate = new Date(2025, 5, 1);
+
     // Little Jack 뮤지컬 스케줄 데이터
     const events = [
         // 6월 스케줄
@@ -151,11 +156,37 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar = new FullCalendar.Calendar(calendarEl, {
         headerToolbar: false,
         initialView: 'dayGridMonth',
+        initialDate: initialDate,
         locale: 'ko',
         events: events,
         height: 'auto',
         dayMaxEvents: false,
         eventDisplay: 'block',
+        eventContent: function(arg) {
+            // 시간 정보 추출
+            let timeText = arg.event.extendedProps.time || '';
+
+            // 시간에 따른 색상 클래스 결정
+            let colorClass = '';
+            if (timeText === '14:00') colorClass = 'event-time-14';
+            else if (timeText === '15:00') colorClass = 'event-time-15';
+            else if (timeText === '16:00') colorClass = 'event-time-16';
+            else if (timeText === '18:00') colorClass = 'event-time-18';
+            else if (timeText === '19:00') colorClass = 'event-time-19';
+            else if (timeText === '20:00') colorClass = 'event-time-20';
+
+            // HTML 요소 생성
+            let eventEl = document.createElement('div');
+            eventEl.classList.add(colorClass);
+            eventEl.style.padding = '2px 4px';
+            eventEl.style.borderRadius = '4px';
+            eventEl.style.color = 'white';
+            eventEl.style.fontSize = '11px';
+            eventEl.style.fontWeight = '500';
+            eventEl.innerText = timeText + ' 리틀잭';
+
+            return { domNodes: [eventEl] };
+        },
 
         dateClick: function (info) {
             const clickedDate = info.dateStr;
@@ -168,16 +199,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
         eventClick: function (info) {
             const event = info.event;
-            const eventData = events.find(e => e.title === event.title && e.start === event.startStr);
-            showEventModal(event.startStr, [eventData]);
+            const eventData = events.find(e => {
+                const eventTime = e.time || '';
+                const eventTitle = eventTime + ' 리틀잭';
+                return eventTitle === event.title && e.start === event.startStr;
+            });
+
+            if (eventData) {
+                showEventModal(event.startStr, [eventData]);
+            }
         },
 
         datesSet: function (info) {
-            updateMonthTitle(info.start);
+            updateMonthTitle(info.view.currentStart);
         }
     });
 
     calendar.render();
+
+    // 초기 월 제목 설정
+    updateMonthTitle(calendar.view.currentStart);
 
     // 네비게이션 버튼 이벤트
     document.getElementById('prevBtn').addEventListener('click', function () {
@@ -189,14 +230,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('todayBtn').addEventListener('click', function () {
-        calendar.today();
+        // 2025년 6월로 이동 (today 버튼을 누르면 항상 2025년 6월로 이동)
+        calendar.gotoDate(initialDate);
     });
 });
 
 function updateMonthTitle(date) {
-    const options = { year: 'numeric', month: 'long' };
-    const title = date.toLocaleDateString('en-US', options);
-    document.getElementById('monthTitle').textContent = title;
+    // 년도와 월을 한국어 형식으로 표시
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // 월은 0부터 시작하므로 +1
+
+    // 년도와 월을 한국어 형식으로 조합
+    document.getElementById('monthTitle').textContent = year + '년 ' + month + '월';
 }
 
 function showEventModal(date, dayEvents) {
