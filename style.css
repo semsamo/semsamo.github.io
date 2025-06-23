@@ -24,6 +24,15 @@ body {
     margin-bottom: 30px;
 }
 
+.schedule-notice {
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    font-style: italic;
+}
+
 .back-btn {
     background: none;
     border: none;
@@ -286,7 +295,12 @@ body {
 }
 
 .fc-day-today {
-    background-color: rgba(255, 193, 7, 0.1);
+    background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.fc-day-today .fc-daygrid-day-number {
+    font-weight: bold;
+    color: #1a73e8 !important;
 }
 
 .fc-event {
@@ -300,6 +314,7 @@ body {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
 }
 
 /* 이벤트 시간별 색상 */
@@ -412,15 +427,7 @@ body {
     color: #333;
 }
 
-.schedule-notice {
-    padding: 15px 20px;
-    font-size: 13px;
-    color: #666;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-    font-style: italic;
-}
-
+/* 반응형 스타일 */
 @media (max-width: 768px) {
     body {
         padding: 15px;
