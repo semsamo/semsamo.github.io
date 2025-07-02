@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const events = [
         // 6월 스케줄
         {
-            title: '19:00 리틀잭',
+            title: '19:00 리틀잭 첫공',
             start: '2025-06-28',
             className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
@@ -150,6 +150,17 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '19:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
+        },
+
+        // 10월 스케줄 - 박세미 생일
+        {
+            title: '🎂 박세미 생일',
+            start: '2025-10-08',
+            className: 'event-birthday',  // 생일 특별 클래스
+            time: '',
+            detail: '🎉 Happy Birthday 박세미! 🎉',
+            location: '💖 Special Day 💖',
+            type: 'birthday'
         }
     ];
 
@@ -165,7 +176,24 @@ document.addEventListener('DOMContentLoaded', function () {
         fixedWeekCount: false, // 달력의 주 수를 해당 월에 맞게 자동으로 조정
         showNonCurrentDates: false, // 현재 월에 속하지 않는 날짜 숨기기
         eventContent: function(arg) {
-            // 시간 정보 추출
+            // 생일 이벤트인지 확인
+            if (arg.event.extendedProps.type === 'birthday') {
+                let eventEl = document.createElement('div');
+                eventEl.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8a80)';
+                eventEl.style.padding = '4px 6px';
+                eventEl.style.borderRadius = '8px';
+                eventEl.style.color = 'white';
+                eventEl.style.fontSize = '11px';
+                eventEl.style.fontWeight = '600';
+                eventEl.style.textAlign = 'center';
+                eventEl.style.boxShadow = '0 2px 4px rgba(255, 107, 157, 0.4)';
+                eventEl.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+                eventEl.innerText = '🎂 세미 생일';
+                
+                return { domNodes: [eventEl] };
+            }
+
+            // 시간 정보 추출 (기존 뮤지컬 일정)
             let timeText = arg.event.extendedProps.time || '';
 
             // 시간에 따른 색상 클래스 결정
@@ -202,6 +230,11 @@ document.addEventListener('DOMContentLoaded', function () {
         eventClick: function (info) {
             const event = info.event;
             const eventData = events.find(e => {
+                // 생일 이벤트인 경우
+                if (e.type === 'birthday') {
+                    return e.title === event.title && e.start === event.startStr;
+                }
+                // 뮤지컬 이벤트인 경우
                 const eventTime = e.time || '';
                 const eventTitle = eventTime + ' 리틀잭';
                 return eventTitle === event.title && e.start === event.startStr;
@@ -233,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('todayBtn').addEventListener('click', function () {
         // 실제 오늘 날짜로 이동
-        calendar.today();
+        calendar.gotoDate(new Date());
     });
 });
 
@@ -266,10 +299,24 @@ function showEventModal(date, dayEvents) {
     dayEvents.forEach(event => {
         const listItem = document.createElement('li');
         listItem.className = 'event-item';
-        listItem.innerHTML = `
-            <div class="event-time">${event.time || ''} - 뮤지컬 리틀잭</div>
-            <div class="event-name">${event.detail}</div>
-        `;
+        
+        // 생일 이벤트인지 확인
+        if (event.type === 'birthday') {
+            listItem.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8a80)';
+            listItem.style.borderRadius = '8px';
+            listItem.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+            listItem.style.color = 'white';
+            listItem.innerHTML = `
+                <div class="event-time" style="color: white; font-weight: 600;">🎂 박세미님의 생일 🎂</div>
+                <div class="event-name" style="color: white;">${event.detail}</div>
+            `;
+        } else {
+            listItem.innerHTML = `
+                <div class="event-time">${event.time || ''} - 뮤지컬 리틀잭</div>
+                <div class="event-name">${event.detail}</div>
+            `;
+        }
+        
         eventList.appendChild(listItem);
     });
 
