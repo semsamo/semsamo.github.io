@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 현재 날짜를 한국 시간으로 설정
     const now = new Date();
-    // 2025년 6월로 초기화 (월은 0부터 시작하므로 5가 6월)
-    const initialDate = new Date(2025, 5, 1);
+    // 현재 날짜로 초기화
+    const initialDate = now;
 
     // Little Jack 뮤지컬 스케줄 데이터
     const events = [
