@@ -151,6 +151,56 @@ document.addEventListener('DOMContentLoaded', function () {
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
         },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-08-20',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '스페셜 스탬프 위크',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '14:00 리틀잭',
+            start: '2025-08-24',
+            className: 'event-time-14',  // 14시 공연 클래스
+            time: '14:00',
+            detail: '스페셜 스탬프 위크',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '20:00 리틀잭',
+            start: '2025-08-26',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '사인회',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '15:00 리틀잭',
+            start: '2025-08-30',
+            className: 'event-time-15',  // 15시 공연 클래스
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 Little Jack'
+        },
+
+        // 9월 스케줄
+        {
+            title: '20:00 리틀잭',
+            start: '2025-09-03',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '스페셜 넘버 위크',
+            location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '18:00 리틀잭',
+            start: '2025-09-07',
+            className: 'event-time-18',  // 18시 공연 클래스
+            time: '18:00',
+            detail: '스페셜 넘버 위크',
+            location: '뮤지컬 Little Jack'
+        },
 
         // 10월 스케줄 - 박세미 생일
         {
