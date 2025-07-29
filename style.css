@@ -173,6 +173,68 @@ body {
     box-shadow: 0 6px 20px rgba(255, 165, 2, 0.4);
 }
 
+.booking-btn.ticketlink {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.booking-btn.ticketlink:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+/* 뮤지컬별 예매 섹션 */
+.booking-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.musical-booking {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.musical-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.musical-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: -0.3px;
+}
+
+.booking-info {
+    margin-bottom: 16px;
+}
+
+.performance-period,
+.performance-venue {
+    font-size: 14px;
+    color: #718096;
+    margin: 4px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.performance-period {
+    color: #e53e3e;
+}
+
+.performance-venue {
+    color: #3182ce;
+}
+
 .booking-btn-icon {
     font-size: 18px;
 }
