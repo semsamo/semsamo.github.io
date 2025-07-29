@@ -186,12 +186,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 9월 스케줄
         {
+            title: '19:30 여단',
+            start: '2025-09-02',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
             title: '20:00 리틀잭',
             start: '2025-09-03',
             className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '스페셜 넘버 위크',
             location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-04',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-09-06',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-09-06',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
         },
         {
             title: '18:00 리틀잭',
@@ -245,6 +277,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 시간 정보 추출 (기존 뮤지컬 일정)
             let timeText = arg.event.extendedProps.time || '';
+            
+            // 뮤지컬 제목 결정 (location 기반)
+            let musicalTitle = '';
+            if (arg.event.extendedProps.location === '뮤지컬 Little Jack') {
+                musicalTitle = '리틀잭';
+            } else if (arg.event.extendedProps.location === '뮤지컬 여단') {
+                musicalTitle = '여단';
+            }
 
             // 시간에 따른 색상 클래스 결정
             let colorClass = '';
@@ -252,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (timeText === '15:00') colorClass = 'event-time-15';
             else if (timeText === '16:00') colorClass = 'event-time-16';
             else if (timeText === '18:00') colorClass = 'event-time-18';
-            else if (timeText === '19:00') colorClass = 'event-time-19';
+            else if (timeText === '19:00' || timeText === '19:30') colorClass = 'event-time-19';
             else if (timeText === '20:00') colorClass = 'event-time-20';
 
             // HTML 요소 생성
@@ -263,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
             eventEl.style.color = 'white';
             eventEl.style.fontSize = '11px';
             eventEl.style.fontWeight = '500';
-            eventEl.innerText = timeText + ' 리틀잭';
+            eventEl.innerText = timeText + ' ' + musicalTitle;
 
             return { domNodes: [eventEl] };
         },
@@ -286,7 +326,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // 뮤지컬 이벤트인 경우
                 const eventTime = e.time || '';
-                const eventTitle = eventTime + ' 리틀잭';
+                let eventTitle = '';
+                if (e.location === '뮤지컬 Little Jack') {
+                    eventTitle = eventTime + ' 리틀잭';
+                } else if (e.location === '뮤지컬 여단') {
+                    eventTitle = eventTime + ' 여단';
+                }
                 return eventTitle === event.title && e.start === event.startStr;
             });
 
@@ -361,8 +406,16 @@ function showEventModal(date, dayEvents) {
                 <div class="event-name" style="color: white;">${event.detail}</div>
             `;
         } else {
+            // 뮤지컬 제목 결정 (location 기반)
+            let musicalTitle = '';
+            if (event.location === '뮤지컬 Little Jack') {
+                musicalTitle = '뮤지컬 리틀잭';
+            } else if (event.location === '뮤지컬 여단') {
+                musicalTitle = '뮤지컬 여단';
+            }
+            
             listItem.innerHTML = `
-                <div class="event-time">${event.time || ''} - 뮤지컬 리틀잭</div>
+                <div class="event-time">${event.time || ''} - ${musicalTitle}</div>
                 <div class="event-name">${event.detail}</div>
             `;
         }
