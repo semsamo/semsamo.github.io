@@ -234,12 +234,36 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 Little Jack'
         },
         {
+            title: '19:30 여단',
+            start: '2025-09-09',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
             title: '20:00 리틀잭',
             start: '2025-09-10',
             className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-11',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-12',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
         },
         {
             title: '15:00 리틀잭',
@@ -250,12 +274,36 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 Little Jack'
         },
         {
+            title: '16:00 여단',
+            start: '2025-09-14',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-09-14',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
             title: '20:00 리틀잭',
             start: '2025-09-16',
             className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '멤버십 데이',
             location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-17',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
         },
         {
             title: '20:00 리틀잭',
@@ -266,12 +314,68 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 Little Jack'
         },
         {
+            title: '19:30 여단',
+            start: '2025-09-19',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
             title: '15:00 리틀잭',
             start: '2025-09-20',
             className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '마지막 공연 무대인사',
             location: '뮤지컬 Little Jack'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-09-21',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-09-21',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-25',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-09-26',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-09-27',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-09-28',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
         },
 
         // 10월 스케줄 - 박세미 생일
