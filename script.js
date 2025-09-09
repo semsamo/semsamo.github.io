@@ -378,7 +378,40 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 여단'
         },
 
-        // 10월 스케줄 - 박세미 생일
+        // 10월 스케줄
+        {
+            title: '19:30 여단',
+            start: '2025-09-30',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-02',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-10-04',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-10-05',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        // 박세미 생일
         {
             title: '🎂 박세미 생일',
             start: '2025-10-08',
@@ -387,6 +420,70 @@ document.addEventListener('DOMContentLoaded', function () {
             detail: '🎉 Happy Birthday 박세미! 🎉',
             location: '💖 Special Day 💖',
             type: 'birthday'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-09',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-10',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-10-12',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-10-12',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-14',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-10-15',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-10-18',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-10-19',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
         }
     ];
 
