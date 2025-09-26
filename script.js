@@ -484,6 +484,64 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-21',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-23',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '20:00 여단',
+            start: '2025-10-25',
+            className: 'event-time-20',  // 20시 공연 클래스
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:30 여단',
+            start: '2025-10-29',
+            className: 'event-time-16',  // 16:30 공연 클래스 (16시 클래스 사용)
+            time: '16:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '19:30 여단',
+            start: '2025-10-30',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+
+        // 11월 스케줄
+        {
+            title: '16:00 여단',
+            start: '2025-11-01',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
+        },
+        {
+            title: '16:00 여단',
+            start: '2025-11-02',
+            className: 'event-time-16',  // 16시 공연 클래스
+            time: '16:00',
+            detail: '',
+            location: '뮤지컬 여단'
         }
     ];
 
