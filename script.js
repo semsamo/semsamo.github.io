@@ -556,10 +556,6 @@ document.addEventListener('DOMContentLoaded', function () {
         eventDisplay: 'block',
         fixedWeekCount: false, // 달력의 주 수를 해당 월에 맞게 자동으로 조정
         showNonCurrentDates: false, // 현재 월에 속하지 않는 날짜 숨기기
-        validRange: {
-            start: '2025-01-01',
-            end: '2026-12-31'
-        }, // 달력 탐색 범위 설정
         eventContent: function(arg) {
             // 생일 이벤트인지 확인
             if (arg.event.extendedProps.type === 'birthday') {
