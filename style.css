@@ -467,6 +467,18 @@ body {
     color: white !important;
 }
 
+.fc-event.event-time-default {
+    background: #9E9E9E !important; /* 회색 */
+    color: white !important;
+}
+
+.fc-event.event-birthday {
+    background: linear-gradient(45deg, #ff6b9d, #ff8a80) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 4px rgba(255, 107, 157, 0.4) !important;
+}
+
 /* 모달 */
 .modal {
     display: none;
