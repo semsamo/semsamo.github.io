@@ -556,6 +556,10 @@ document.addEventListener('DOMContentLoaded', function () {
         eventDisplay: 'block',
         fixedWeekCount: false, // 달력의 주 수를 해당 월에 맞게 자동으로 조정
         showNonCurrentDates: false, // 현재 월에 속하지 않는 날짜 숨기기
+        validRange: {
+            start: '2025-01-01',
+            end: '2026-12-31'
+        }, // 유효한 날짜 범위 확장
         eventContent: function(arg) {
             // 생일 이벤트인지 확인
             if (arg.event.extendedProps.type === 'birthday') {
@@ -589,14 +593,17 @@ document.addEventListener('DOMContentLoaded', function () {
             let colorClass = '';
             if (timeText === '14:00') colorClass = 'event-time-14';
             else if (timeText === '15:00') colorClass = 'event-time-15';
-            else if (timeText === '16:00') colorClass = 'event-time-16';
+            else if (timeText === '16:00' || timeText === '16:30') colorClass = 'event-time-16';
             else if (timeText === '18:00') colorClass = 'event-time-18';
             else if (timeText === '19:00' || timeText === '19:30') colorClass = 'event-time-19';
             else if (timeText === '20:00') colorClass = 'event-time-20';
+            else colorClass = 'event-time-default'; // 기본 클래스 추가
 
             // HTML 요소 생성
             let eventEl = document.createElement('div');
-            eventEl.classList.add(colorClass);
+            if (colorClass) {
+                eventEl.classList.add(colorClass);
+            }
             eventEl.style.padding = '2px 4px';
             eventEl.style.borderRadius = '4px';
             eventEl.style.color = 'white';
