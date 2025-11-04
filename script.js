@@ -542,6 +542,154 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
+        },
+
+        // 12월 스케줄 (판)
+        {
+            title: '20:00 판',
+            start: '2025-12-24',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2025-12-25',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2025-12-25',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '15:00 판',
+            start: '2025-12-27',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2025-12-27',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2025-12-31',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+
+        // 1월 스케줄 (판)
+        {
+            title: '14:00 판',
+            start: '2026-01-01',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-01-01',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2026-01-04',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-01-04',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-07',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-08',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '15:00 판',
+            start: '2026-01-10',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2026-01-10',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-14',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-15',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '15:00 판',
+            start: '2026-01-17',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2026-01-17',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '뮤지컬 판'
         }
     ];
 
@@ -557,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fixedWeekCount: false, // 달력의 주 수를 해당 월에 맞게 자동으로 조정
         showNonCurrentDates: false, // 현재 월에 속하지 않는 날짜 숨기기
         validRange: {
-            start: '2025-01-01',
+            start: '2024-12-01',
             end: '2026-12-31'
         }, // 유효한 날짜 범위 확장
         eventContent: function(arg) {
@@ -587,6 +735,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '리틀잭';
             } else if (arg.event.extendedProps.location === '뮤지컬 여단') {
                 musicalTitle = '여단';
+            } else if (arg.event.extendedProps.location === '뮤지컬 판') {
+                musicalTitle = '판';
             }
 
             // 시간에 따른 색상 클래스 결정
@@ -637,6 +787,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 리틀잭';
                 } else if (e.location === '뮤지컬 여단') {
                     eventTitle = eventTime + ' 여단';
+                } else if (e.location === '뮤지컬 판') {
+                    eventTitle = eventTime + ' 판';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -718,6 +870,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '뮤지컬 리틀잭';
             } else if (event.location === '뮤지컬 여단') {
                 musicalTitle = '뮤지컬 여단';
+            } else if (event.location === '뮤지컬 판') {
+                musicalTitle = '뮤지컬 판';
             }
             
             listItem.innerHTML = `
