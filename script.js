@@ -543,6 +543,14 @@ document.addEventListener('DOMContentLoaded', function () {
             detail: '',
             location: '뮤지컬 여단'
         },
+        {
+            title: '19:30 비망록',
+            start: '2025-11-04',
+            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
+            time: '19:30',
+            detail: '',
+            location: '비망록'
+        },
 
         // 12월 스케줄 (판)
         {
@@ -737,6 +745,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '여단';
             } else if (arg.event.extendedProps.location === '뮤지컬 판') {
                 musicalTitle = '판';
+            } else if (arg.event.extendedProps.location === '비망록') {
+                musicalTitle = '비망록';
             }
 
             // 시간에 따른 색상 클래스 결정
@@ -789,6 +799,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 여단';
                 } else if (e.location === '뮤지컬 판') {
                     eventTitle = eventTime + ' 판';
+                } else if (e.location === '비망록') {
+                    eventTitle = eventTime + ' 비망록';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -872,6 +884,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '뮤지컬 여단';
             } else if (event.location === '뮤지컬 판') {
                 musicalTitle = '뮤지컬 판';
+            } else if (event.location === '비망록') {
+                musicalTitle = '비망록';
             }
             
             listItem.innerHTML = `
