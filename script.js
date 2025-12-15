@@ -698,6 +698,70 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '19:00',
             detail: '',
             location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-20',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-23',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2026-01-25',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-01-25',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-27',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-01-28',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '15:00 판',
+            start: '2026-01-31',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2026-01-31',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '뮤지컬 판'
         }
     ];
 
