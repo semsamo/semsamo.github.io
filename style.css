@@ -4,50 +4,64 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-primary: #fafafa;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b6b6b;
+    --text-muted: #999999;
+    --accent: #2d2d2d;
+    --accent-light: #404040;
+    --border: #e8e8e8;
+    --border-light: #f0f0f0;
+    --event-primary: #2d2d2d;
+    --event-secondary: #666666;
+}
+
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--bg-primary);
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     position: relative;
 }
 
 .header {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    padding: 0 0 48px 0;
+    margin-bottom: 0;
     text-align: center;
 }
 
 .header .title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
-    color: #1a202c;
+    color: var(--text-primary);
     margin-bottom: 8px;
-    letter-spacing: -0.8px;
+    letter-spacing: -1px;
 }
 
 .header p {
-    font-size: 16px;
-    color: #718096;
+    font-size: 14px;
+    color: var(--text-muted);
     font-weight: 400;
     margin: 0;
+    letter-spacing: -0.2px;
 }
 
 .schedule-notice {
-    padding: 15px 20px;
-    font-size: 13px;
-    color: #666;
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--text-muted);
     text-align: center;
-    border-top: 1px solid #e0e0e0;
-    font-style: italic;
+    border-top: 1px solid var(--border-light);
+    font-style: normal;
+    letter-spacing: -0.2px;
 }
 
 .back-btn {
@@ -69,51 +83,51 @@ body {
 
 .schedule-wrap {
     display: flex;
-    gap: 0;
+    gap: 32px;
     align-items: flex-start;
 }
 
 .calendar-container {
-    background: white;
-    border-radius: 15px;
+    background: var(--bg-card);
+    border-radius: 16px;
     padding: 0;
     flex: 1;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
     overflow: hidden;
 }
 
 .artist-section {
-    width: 250px;
-    margin-left: 20px;
+    width: 240px;
     z-index: 10;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
 .artist-image {
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .artist-image:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .artist-image img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid var(--border);
 }
 
 .booking-buttons {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .booking-btn {
@@ -123,120 +137,95 @@ body {
     justify-content: center;
     gap: 8px;
     text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 12px;
+    padding: 14px 20px;
+    border-radius: 10px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s ease;
     overflow: hidden;
-    border: none;
+    border: 1px solid var(--border);
     cursor: pointer;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.3px;
+    background: var(--bg-card);
+    color: var(--text-primary);
 }
 
-.booking-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-}
-
-.booking-btn:hover::before {
-    transform: translateX(100%);
-}
-
-.booking-btn.yes24 {
-    background: linear-gradient(135deg, #ff4757, #ff3838);
+.booking-btn:hover {
+    background: var(--accent);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+    border-color: var(--accent);
 }
 
-.booking-btn.yes24:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
-}
-
-.booking-btn.interpark {
-    background: linear-gradient(135deg, #ffa502, #ff7675);
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 165, 2, 0.3);
-}
-
-.booking-btn.interpark:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(255, 165, 2, 0.4);
-}
-
+.booking-btn.yes24,
+.booking-btn.interpark,
 .booking-btn.ticketlink {
-    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    color: white;
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: none;
 }
 
+.booking-btn.yes24:hover,
+.booking-btn.interpark:hover,
 .booking-btn.ticketlink:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    transform: none;
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
 }
 
 /* 뮤지컬별 예매 섹션 */
 .booking-section {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
 }
 
 .musical-booking {
-    background: white;
-    border-radius: 16px;
+    background: var(--bg-card);
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
 }
 
 .musical-booking:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent);
 }
 
 .musical-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 12px;
+    color: var(--text-primary);
+    margin-bottom: 14px;
     text-align: center;
     letter-spacing: -0.3px;
 }
 
 .booking-info {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .performance-period,
 .performance-venue {
-    font-size: 14px;
-    color: #718096;
+    font-size: 13px;
+    color: var(--text-secondary);
     margin: 4px 0;
     text-align: center;
     font-weight: 500;
 }
 
 .performance-period {
-    color: #e53e3e;
+    color: var(--text-secondary);
 }
 
 .performance-venue {
-    color: #3182ce;
+    color: var(--text-muted);
 }
 
 .booking-btn-icon {
-    font-size: 18px;
+    font-size: 16px;
+    opacity: 0.7;
 }
 
 .booking-btn-text {
@@ -247,38 +236,38 @@ body {
 }
 
 .booking-btn-platform {
-    font-size: 11px;
-    opacity: 0.9;
+    font-size: 10px;
+    opacity: 0.6;
     font-weight: 400;
 }
 
 .booking-btn-action {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* 아티스트 정보 섹션 */
 .artist-info {
-    background: white;
+    background: var(--bg-card);
     border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    margin-top: 15px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    margin-top: 12px;
 }
 
 .artist-info h2 {
-    font-size: 20px;
-    font-weight: 500;
-    color: #1a202c;
-    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
     text-align: center;
     letter-spacing: -0.3px;
 }
 
 .artist-info p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
-    color: #4a5568;
-    margin-bottom: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
 }
 
 .artist-info p:last-child {
@@ -286,15 +275,14 @@ body {
 }
 
 .artist-info a {
-    color: #3182ce;
+    color: var(--accent);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .artist-info a:hover {
-    color: #2c5aa0;
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 #calendar {
@@ -308,72 +296,68 @@ body {
 
 /* 커스텀 헤더 */
 .custom-header {
-    padding: 25px 30px;
+    padding: 24px 28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .month-title {
-    font-size: 24px;
-    font-weight: 500;
-    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
     letter-spacing: -0.5px;
 }
 
 .nav-buttons {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
 }
 
 .nav-btn {
-    background: white;
-    border: 1.5px solid #e2e8f0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: #64748b;
-    font-size: 18px;
-    font-weight: 500;
+    transition: all 0.15s ease;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .nav-btn:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
-    color: #475569;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
 }
 
 .nav-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: scale(0.96);
 }
 
 .today-btn {
-    background: #3b82f6;
+    background: var(--accent);
     color: white;
-    border: none;
-    padding: 0 20px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 14px;
+    border: 1px solid var(--accent);
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 13px;
     font-weight: 500;
     width: auto;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+    letter-spacing: -0.2px;
 }
 
 .today-btn:hover {
-    background: #2563eb;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    background: var(--accent-light);
+    border-color: var(--accent-light);
 }
 
 /* 캘린더 스타일 */
@@ -382,50 +366,63 @@ body {
 }
 
 .fc-col-header {
-    background: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .fc-col-header-cell {
-    padding: 15px 8px;
-    font-weight: 600;
-    color: #666;
+    padding: 14px 8px;
+    font-weight: 500;
+    color: var(--text-muted);
     text-align: center;
-    border-right: 1px solid #e0e0e0;
+    border-right: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .fc-daygrid-day {
-    border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-    min-height: 120px;
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    min-height: 110px;
     position: relative;
 }
 
 .fc-daygrid-day-number {
-    padding: 8px 12px;
-    font-size: 16px;
+    padding: 10px 12px;
+    font-size: 13px;
     font-weight: 500;
-    color: #333;
+    color: var(--text-secondary);
     text-decoration: none;
 }
 
 .fc-day-other .fc-daygrid-day-number {
-    color: #ccc;
+    color: var(--border);
 }
 
 .fc-day-today {
-    background-color: rgba(255, 193, 7, 0.1) !important;
+    background-color: var(--bg-primary) !important;
 }
 
 .fc-day-today .fc-daygrid-day-number {
-    font-weight: bold;
-    color: #1a73e8 !important;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    background: var(--accent);
+    color: white !important;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+    padding: 0;
 }
 
 .fc-event {
     border: none !important;
     border-radius: 4px !important;
-    padding: 2px 6px !important;
+    padding: 3px 6px !important;
     margin: 1px 4px 2px 4px !important;
     font-size: 11px !important;
     font-weight: 500 !important;
@@ -433,50 +430,26 @@ body {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    box-shadow: none !important;
 }
 
-/* 이벤트 시간별 색상 */
-.fc-event.event-time-14 {
-    background: #4CAF50 !important; /* 초록색 */
-    color: white !important;
-}
-
-.fc-event.event-time-15 {
-    background: #8BC34A !important; /* 라이트 그린 */
-    color: white !important;
-}
-
-.fc-event.event-time-16 {
-    background: #2196F3 !important; /* 파란색 */
-    color: white !important;
-}
-
-.fc-event.event-time-18 {
-    background: #9C27B0 !important; /* 보라색 */
-    color: white !important;
-}
-
-.fc-event.event-time-19 {
-    background: #FF5722 !important; /* 주황색 */
-    color: white !important;
-}
-
-.fc-event.event-time-20 {
-    background: #F44336 !important; /* 빨간색 */
-    color: white !important;
-}
-
+/* 이벤트 시간별 색상 - 미니멀하게 통일 */
+.fc-event.event-time-14,
+.fc-event.event-time-15,
+.fc-event.event-time-16,
+.fc-event.event-time-18,
+.fc-event.event-time-19,
+.fc-event.event-time-20,
 .fc-event.event-time-default {
-    background: #9E9E9E !important; /* 회색 */
+    background: var(--event-primary) !important;
     color: white !important;
 }
 
 .fc-event.event-birthday {
-    background: linear-gradient(45deg, #ff6b9d, #ff8a80) !important;
+    background: var(--text-muted) !important;
     color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 2px 4px rgba(255, 107, 157, 0.4) !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 /* 모달 */
@@ -488,50 +461,56 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
 
 .modal-content {
-    background: white;
+    background: var(--bg-card);
     margin: 15% auto;
     padding: 0;
     border-radius: 12px;
     width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 360px;
+    border: 1px solid var(--border);
 }
 
 .modal-header {
-    padding: 20px 25px;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .modal-title {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
     letter-spacing: -0.3px;
 }
 
 .close-btn {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
-    color: #666;
+    color: var(--text-muted);
     padding: 4px;
+    transition: color 0.15s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
 }
 
 .close-btn::before {
     content: "×";
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .modal-body {
-    padding: 20px 25px;
+    padding: 16px 24px 20px;
 }
 
 .event-list {
@@ -540,7 +519,7 @@ body {
 
 .event-item {
     padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .event-item:last-child {
@@ -548,61 +527,72 @@ body {
 }
 
 .event-time {
-    font-size: 12px;
-    color: #666;
+    font-size: 11px;
+    color: var(--text-muted);
     margin-bottom: 4px;
+    letter-spacing: -0.2px;
 }
 
 .event-name {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    color: #333;
+    color: var(--text-primary);
 }
 
 /* 푸터 스타일 */
 footer {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-top: 30px;
+    background: transparent;
+    padding: 40px 20px 20px;
+    margin-top: 0;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 footer p {
-    font-size: 14px;
-    color: #718096;
+    font-size: 12px;
+    color: var(--text-muted);
     margin: 0;
     font-weight: 400;
+    letter-spacing: -0.2px;
 }
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
     body {
-        padding: 15px;
+        padding: 20px 16px;
+    }
+
+    .header {
+        padding: 0 0 32px 0;
+    }
+
+    .header .title {
+        font-size: 22px;
+    }
+
+    .header p {
+        font-size: 13px;
     }
 
     .schedule-wrap {
         flex-direction: column;
-        gap: 20px;
+        gap: 16px;
     }
 
     .artist-section {
         width: 100%;
-        margin: 0;
         order: 2;
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 15px;
-        background: white;
-        padding: 15px;
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        gap: 12px;
+        background: var(--bg-card);
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
     }
 
     .artist-image {
-        width: 120px;
+        width: 100px;
         flex-shrink: 0;
     }
 
@@ -617,20 +607,20 @@ footer p {
     }
 
     .booking-btn {
-        padding: 10px 16px;
-        font-size: 13px;
+        padding: 10px 14px;
+        font-size: 12px;
     }
 
     .booking-btn-icon {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .booking-btn-platform {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .booking-btn-action {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .calendar-container {
@@ -638,102 +628,42 @@ footer p {
     }
 
     .custom-header {
-        padding: 20px;
+        padding: 18px 20px;
     }
 
     .month-title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
-    .fc-daygrid-day {
-        min-height: 80px;
-    }
-
-    .fc-event {
-        font-size: 10px !important;
-        padding: 1px 4px !important;
-    }
-
-    .schedule-notice {
-        padding: 12px 15px;
-        font-size: 12px;
-    }
-
-    .header {
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    .header .title {
-        font-size: 26px;
-    }
-
-    .header p {
+    .nav-btn {
+        width: 32px;
+        height: 32px;
         font-size: 14px;
     }
 
-    .artist-info {
-        padding: 20px;
-        margin-top: 12px;
+    .today-btn {
+        height: 32px;
+        padding: 0 12px;
+        font-size: 12px;
     }
-
-    .artist-info h2 {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .artist-info p {
-        font-size: 13px;
-        margin-bottom: 10px;
-    }
-
-    footer {
-        padding: 15px;
-        margin-top: 20px;
-    }
-
-    footer p {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .artist-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .artist-image {
-        width: 150px;
-    }
-
-    .booking-buttons {
-        width: 100%;
-        flex-direction: row;
-        gap: 10px;
-    }
-
-    .booking-btn {
-        flex: 1;
-    }
-
-
 
     .fc-daygrid-day {
-        min-height: 60px;
+        min-height: 70px;
     }
 
-    .header {
-        padding: 16px;
-        margin-bottom: 16px;
+    .fc-daygrid-day-number {
+        font-size: 12px;
+        padding: 8px 10px;
     }
 
-    .header .title {
-        font-size: 22px;
+    .fc-event {
+        font-size: 9px !important;
+        padding: 2px 4px !important;
     }
 
-    .header p {
-        font-size: 13px;
+    .schedule-notice {
+        padding: 12px 16px;
+        font-size: 11px;
     }
 
     .artist-info {
@@ -742,7 +672,7 @@ footer p {
     }
 
     .artist-info h2 {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
@@ -752,11 +682,92 @@ footer p {
     }
 
     footer {
-        padding: 12px;
-        margin-top: 16px;
+        padding: 32px 16px 16px;
     }
 
     footer p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .header .title {
+        font-size: 20px;
+    }
+
+    .header p {
         font-size: 12px;
+    }
+
+    .artist-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px;
+    }
+
+    .artist-image {
+        width: 120px;
+    }
+
+    .booking-buttons {
+        width: 100%;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .booking-btn {
+        flex: 1;
+        padding: 10px 8px;
+    }
+
+    .fc-col-header-cell {
+        padding: 10px 4px;
+        font-size: 10px;
+    }
+
+    .fc-daygrid-day {
+        min-height: 55px;
+    }
+
+    .fc-daygrid-day-number {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .fc-event {
+        font-size: 8px !important;
+        padding: 1px 3px !important;
+    }
+
+    .custom-header {
+        padding: 16px;
+    }
+
+    .month-title {
+        font-size: 15px;
+    }
+
+    .artist-info {
+        padding: 14px;
+    }
+
+    .artist-info h2 {
+        font-size: 13px;
+    }
+
+    .artist-info p {
+        font-size: 11px;
+    }
+
+    footer {
+        padding: 28px 12px 12px;
+    }
+
+    footer p {
+        font-size: 10px;
     }
 }
