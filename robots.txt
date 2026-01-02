@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://semsamo.github.io/sitemap.xml
