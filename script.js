@@ -552,7 +552,15 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '비망록'
         },
 
-        // 12월 스케줄 (판)
+        // 12월 스케줄
+        {
+            title: '19:30 춤추는 갈매기',
+            start: '2025-12-05',
+            className: 'event-time-19',
+            time: '19:30',
+            detail: '',
+            location: '연극 춤추는 갈매기'
+        },
         {
             title: '20:00 판',
             start: '2025-12-24',
@@ -784,17 +792,15 @@ document.addEventListener('DOMContentLoaded', function () {
             // 생일 이벤트인지 확인
             if (arg.event.extendedProps.type === 'birthday') {
                 let eventEl = document.createElement('div');
-                eventEl.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8a80)';
-                eventEl.style.padding = '4px 6px';
-                eventEl.style.borderRadius = '8px';
+                eventEl.style.background = '#999999';
+                eventEl.style.padding = '3px 6px';
+                eventEl.style.borderRadius = '4px';
                 eventEl.style.color = 'white';
                 eventEl.style.fontSize = '11px';
-                eventEl.style.fontWeight = '600';
+                eventEl.style.fontWeight = '500';
                 eventEl.style.textAlign = 'center';
-                eventEl.style.boxShadow = '0 2px 4px rgba(255, 107, 157, 0.4)';
-                eventEl.style.border = '1px solid rgba(255, 255, 255, 0.3)';
-                eventEl.innerText = '🎂 세미 생일';
-                
+                eventEl.innerText = 'Birthday';
+
                 return { domNodes: [eventEl] };
             }
 
@@ -811,6 +817,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '판';
             } else if (arg.event.extendedProps.location === '비망록') {
                 musicalTitle = '비망록';
+            } else if (arg.event.extendedProps.location === '연극 춤추는 갈매기') {
+                musicalTitle = '춤추는 갈매기';
             }
 
             // 시간에 따른 색상 클래스 결정
@@ -825,10 +833,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // HTML 요소 생성
             let eventEl = document.createElement('div');
-            if (colorClass) {
-                eventEl.classList.add(colorClass);
-            }
-            eventEl.style.padding = '2px 4px';
+            eventEl.style.background = '#2d2d2d';
+            eventEl.style.padding = '3px 6px';
             eventEl.style.borderRadius = '4px';
             eventEl.style.color = 'white';
             eventEl.style.fontSize = '11px';
@@ -865,6 +871,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 판';
                 } else if (e.location === '비망록') {
                     eventTitle = eventTime + ' 비망록';
+                } else if (e.location === '연극 춤추는 갈매기') {
+                    eventTitle = eventTime + ' 춤추는 갈매기';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -931,13 +939,12 @@ function showEventModal(date, dayEvents) {
         
         // 생일 이벤트인지 확인
         if (event.type === 'birthday') {
-            listItem.style.background = 'linear-gradient(45deg, #ff6b9d, #ff8a80)';
-            listItem.style.borderRadius = '8px';
-            listItem.style.border = '1px solid rgba(255, 255, 255, 0.3)';
-            listItem.style.color = 'white';
+            listItem.style.background = '#f5f5f5';
+            listItem.style.borderRadius = '6px';
+            listItem.style.padding = '12px';
             listItem.innerHTML = `
-                <div class="event-time" style="color: white; font-weight: 600;">🎂 박세미님의 생일 🎂</div>
-                <div class="event-name" style="color: white;">${event.detail}</div>
+                <div class="event-time" style="font-weight: 500;">박세미 생일</div>
+                <div class="event-name">${event.detail}</div>
             `;
         } else {
             // 뮤지컬 제목 결정 (location 기반)
@@ -950,8 +957,10 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '뮤지컬 판';
             } else if (event.location === '비망록') {
                 musicalTitle = '비망록';
+            } else if (event.location === '연극 춤추는 갈매기') {
+                musicalTitle = '연극 춤추는 갈매기';
             }
-            
+
             listItem.innerHTML = `
                 <div class="event-time">${event.time || ''} - ${musicalTitle}</div>
                 <div class="event-name">${event.detail}</div>
