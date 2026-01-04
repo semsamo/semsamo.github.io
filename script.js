@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-07',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
         },
         {
@@ -656,7 +656,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-08',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
         },
         {
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-10',
             className: 'event-time-15',
             time: '15:00',
-            detail: '',
+            detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
         },
         {
@@ -672,7 +672,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-10',
             className: 'event-time-19',
             time: '19:00',
-            detail: '',
+            detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
         },
         {
@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-14',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -688,7 +688,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-15',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-17',
             className: 'event-time-15',
             time: '15:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -704,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-17',
             className: 'event-time-19',
             time: '19:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -712,7 +712,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-20',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-23',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -728,7 +728,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-25',
             className: 'event-time-14',
             time: '14:00',
-            detail: '',
+            detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -736,7 +736,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-25',
             className: 'event-time-18',
             time: '18:00',
-            detail: '',
+            detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
@@ -744,7 +744,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-27',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
         },
         {
@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-28',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
         },
         {
@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-31',
             className: 'event-time-15',
             time: '15:00',
-            detail: '',
+            detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
         },
         {
@@ -768,7 +768,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-01-31',
             className: 'event-time-19',
             time: '19:00',
-            detail: '',
+            detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
         }
     ];
