@@ -740,6 +740,14 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 판'
         },
         {
+            title: '19:30 판',
+            start: '2026-01-26',
+            className: 'event-time-19',
+            time: '19:30',
+            detail: '뮤지컬 <판> 콘서트 | 새해 大 잔치',
+            location: '뮤지컬 판'
+        },
+        {
             title: '20:00 판',
             start: '2026-01-27',
             className: 'event-time-20',
