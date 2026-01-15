@@ -778,6 +778,104 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '19:00',
             detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
+        },
+
+        // 2월 스케줄 (판)
+        {
+            title: '20:00 판',
+            start: '2026-02-05',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-06',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2026-02-08',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-02-08',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-11',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-13',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2026-02-15',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-02-15',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-19',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-20',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '14:00 판',
+            start: '2026-02-22',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '18:00 판',
+            start: '2026-02-22',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 판'
         }
     ];
 
