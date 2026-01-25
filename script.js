@@ -1,5 +1,28 @@
 let calendar;
 
+// ===== 다크모드 기능 =====
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (prefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// 페이지 로드 전 테마 적용 (깜빡임 방지)
+initTheme();
+
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
 
@@ -1014,20 +1037,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // 초기 월 제목 설정
     updateMonthTitle(calendar.view.currentStart);
 
-    // 네비게이션 버튼 이벤트
+    // 네비게이션 버튼 이벤트 (애니메이션 포함)
     document.getElementById('prevBtn').addEventListener('click', function () {
-        calendar.prev();
+        animateCalendarTransition(() => calendar.prev());
     });
 
     document.getElementById('nextBtn').addEventListener('click', function () {
-        calendar.next();
+        animateCalendarTransition(() => calendar.next());
     });
 
     document.getElementById('todayBtn').addEventListener('click', function () {
-        // 실제 오늘 날짜로 이동
-        calendar.gotoDate(new Date());
+        animateCalendarTransition(() => calendar.gotoDate(new Date()));
     });
 });
+
+// 캘린더 월 전환 애니메이션
+function animateCalendarTransition(callback) {
+    const container = document.querySelector('.calendar-container');
+    container.classList.add('calendar-transitioning');
+
+    setTimeout(() => {
+        callback();
+        container.classList.remove('calendar-transitioning');
+    }, 150);
+}
 
 function updateMonthTitle(date) {
     // 년도와 월을 한국어 형식으로 표시
@@ -1093,10 +1126,19 @@ function showEventModal(date, dayEvents) {
     });
 
     modal.style.display = 'block';
+    // 애니메이션을 위해 약간의 딜레이 후 show 클래스 추가
+    requestAnimationFrame(() => {
+        modal.classList.add('show');
+    });
 }
 
 function closeModal() {
-    document.getElementById('eventModal').style.display = 'none';
+    const modal = document.getElementById('eventModal');
+    modal.classList.remove('show');
+    // 애니메이션 완료 후 display none
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
 }
 
 function goBack() {
