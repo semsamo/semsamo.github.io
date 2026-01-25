@@ -724,6 +724,22 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 판'
         },
         {
+            title: '15:00 판',
+            start: '2026-01-24',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '싱어롱 특별 커튼콜 주간',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2026-01-24',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '싱어롱 특별 커튼콜 주간',
+            location: '뮤지컬 판'
+        },
+        {
             title: '14:00 판',
             start: '2026-01-25',
             className: 'event-time-14',
