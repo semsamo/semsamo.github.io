@@ -55,8 +55,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <!-- 다크모드 깜빡임 방지 (페이지 로드 전 테마 적용) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
+<!-- 다크모드 토글 버튼 -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환">
+    <span class="icon-sun">☀️</span>
+    <span class="icon-moon">🌙</span>
+</button>
+
 <div class="container">
     <header class="header">
         <h1 class="title">박세미 배우님 스케줄</h1>
