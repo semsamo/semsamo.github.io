@@ -16,6 +16,25 @@
     --border-light: #f0f0f0;
     --event-primary: #2d2d2d;
     --event-secondary: #666666;
+    --shadow: rgba(0, 0, 0, 0.06);
+    --shadow-hover: rgba(0, 0, 0, 0.1);
+}
+
+/* 다크모드 */
+[data-theme="dark"] {
+    --bg-primary: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --text-muted: #707070;
+    --accent: #e0e0e0;
+    --accent-light: #c0c0c0;
+    --border: #2a2a2a;
+    --border-light: #252525;
+    --event-primary: #3a3a3a;
+    --event-secondary: #505050;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -445,11 +464,47 @@ body {
     color: white !important;
 }
 
+[data-theme="dark"] .fc-event.event-time-14,
+[data-theme="dark"] .fc-event.event-time-15,
+[data-theme="dark"] .fc-event.event-time-16,
+[data-theme="dark"] .fc-event.event-time-18,
+[data-theme="dark"] .fc-event.event-time-19,
+[data-theme="dark"] .fc-event.event-time-20,
+[data-theme="dark"] .fc-event.event-time-default {
+    background: #4a4a4a !important;
+    color: #f0f0f0 !important;
+}
+
 .fc-event.event-birthday {
     background: var(--text-muted) !important;
     color: white !important;
     border: none !important;
     box-shadow: none !important;
+}
+
+[data-theme="dark"] .fc-event.event-birthday {
+    background: #5a5a5a !important;
+}
+
+/* 다크모드 추가 스타일 */
+[data-theme="dark"] .artist-image img {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] .today-btn {
+    background: #e0e0e0;
+    color: #1a1a1a;
+    border-color: #e0e0e0;
+}
+
+[data-theme="dark"] .today-btn:hover {
+    background: #c0c0c0;
+    border-color: #c0c0c0;
+}
+
+[data-theme="dark"] .fc-day-today .fc-daygrid-day-number {
+    background: #e0e0e0;
+    color: #1a1a1a !important;
 }
 
 /* 모달 */
@@ -769,5 +824,248 @@ footer p {
 
     footer p {
         font-size: 10px;
+    }
+}
+
+/* ===== 다크모드 토글 버튼 ===== */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 4px 20px var(--shadow-hover);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.theme-toggle .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* ===== 페이지 로드 애니메이션 ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.calendar-container {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.artist-section {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+footer {
+    animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+/* ===== 캘린더 월 전환 애니메이션 ===== */
+.fc-daygrid-body {
+    transition: opacity 0.3s ease;
+}
+
+.calendar-transitioning .fc-daygrid-body {
+    opacity: 0.5;
+}
+
+/* ===== 향상된 호버 효과 ===== */
+.calendar-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-container:hover {
+    box-shadow: 0 8px 30px var(--shadow-hover);
+}
+
+.artist-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px var(--shadow-hover);
+}
+
+.artist-image img {
+    transition: transform 0.3s ease;
+}
+
+.artist-image:hover img {
+    transform: scale(1.02);
+}
+
+.booking-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+.booking-btn:active {
+    transform: translateY(0);
+}
+
+.musical-booking {
+    transition: all 0.3s ease;
+}
+
+.musical-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+}
+
+/* ===== 이벤트 호버 효과 ===== */
+.fc-event {
+    transition: all 0.2s ease !important;
+}
+
+.fc-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px var(--shadow-hover) !important;
+}
+
+/* ===== 네비게이션 버튼 애니메이션 ===== */
+.nav-btn {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    transform: scale(1.08);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* ===== 모달 애니메이션 ===== */
+.modal {
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    transform: scale(0.9) translateY(-20px);
+    opacity: 0;
+}
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* ===== 날짜 셀 호버 효과 ===== */
+.fc-daygrid-day {
+    transition: background-color 0.2s ease;
+}
+
+.fc-daygrid-day:hover {
+    background-color: var(--border-light);
+}
+
+/* ===== 다크모드 전환 애니메이션 ===== */
+body,
+.container,
+.calendar-container,
+.artist-section,
+.booking-btn,
+.musical-booking,
+.modal-content,
+.theme-toggle,
+.nav-btn,
+.fc-col-header,
+.fc-daygrid-day {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== 반응형 토글 버튼 ===== */
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
     }
 }
