@@ -786,6 +786,16 @@ document.addEventListener('DOMContentLoaded', function () {
             detail: '뮤지컬 <판> 콘서트 | 새해 大 잔치',
             location: '뮤지컬 판'
         },
+        // 박세미 데뷔 15주년
+        {
+            title: '🎉 데뷔 15주년',
+            start: '2026-01-27',
+            className: 'event-anniversary',
+            time: '',
+            detail: '🎊 데뷔 15주년 축하합니다! 🎊',
+            location: '💖 Special Day 💖',
+            type: 'anniversary'
+        },
         {
             title: '20:00 판',
             start: '2026-01-27',
@@ -949,6 +959,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 return { domNodes: [eventEl] };
             }
 
+            // 데뷔 기념일 이벤트인지 확인
+            if (arg.event.extendedProps.type === 'anniversary') {
+                let eventEl = document.createElement('div');
+                eventEl.style.background = '#999999';
+                eventEl.style.padding = '3px 6px';
+                eventEl.style.borderRadius = '4px';
+                eventEl.style.color = 'white';
+                eventEl.style.fontSize = '11px';
+                eventEl.style.fontWeight = '500';
+                eventEl.style.textAlign = 'center';
+                eventEl.innerText = '데뷔 15주년';
+
+                return { domNodes: [eventEl] };
+            }
+
             // 시간 정보 추출 (기존 뮤지컬 일정)
             let timeText = arg.event.extendedProps.time || '';
             
@@ -1003,6 +1028,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const eventData = events.find(e => {
                 // 생일 이벤트인 경우
                 if (e.type === 'birthday') {
+                    return e.title === event.title && e.start === event.startStr;
+                }
+                // 데뷔 기념일 이벤트인 경우
+                if (e.type === 'anniversary') {
                     return e.title === event.title && e.start === event.startStr;
                 }
                 // 뮤지컬 이벤트인 경우
@@ -1099,6 +1128,14 @@ function showEventModal(date, dayEvents) {
             listItem.style.padding = '12px';
             listItem.innerHTML = `
                 <div class="event-time" style="font-weight: 500;">박세미 생일</div>
+                <div class="event-name">${event.detail}</div>
+            `;
+        } else if (event.type === 'anniversary') {
+            listItem.style.background = '#f5f5f5';
+            listItem.style.borderRadius = '6px';
+            listItem.style.padding = '12px';
+            listItem.innerHTML = `
+                <div class="event-time" style="font-weight: 500;">데뷔 15주년</div>
                 <div class="event-name">${event.detail}</div>
             `;
         } else {
