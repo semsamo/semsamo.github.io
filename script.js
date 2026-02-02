@@ -835,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-02-05',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '이야기꾼 서명회',
             location: '뮤지컬 판'
         },
         {
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-02-06',
             className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '행운 뽑기날',
             location: '뮤지컬 판'
         },
         {
@@ -851,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-02-08',
             className: 'event-time-14',
             time: '14:00',
-            detail: '',
+            detail: '행운 뽑기날',
             location: '뮤지컬 판'
         },
         {
@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', function () {
             start: '2026-02-08',
             className: 'event-time-18',
             time: '18:00',
-            detail: '',
+            detail: '행운 뽑기날',
             location: '뮤지컬 판'
         },
         {
