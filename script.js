@@ -26,10 +26,7 @@ initTheme();
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
 
-    // 현재 날짜를 한국 시간으로 설정
-    const now = new Date();
-    // 현재 날짜로 초기화
-    const initialDate = now;
+    const initialDate = new Date();
 
     // Little Jack 뮤지컬 스케줄 데이터
     const events = [
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭 첫공',
             start: '2025-06-28',
-            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '첫공 무대인사',
             location: '뮤지컬 Little Jack'
@@ -47,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-02',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '커튼콜',
             location: '뮤지컬 Little Jack'
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-04',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '커튼콜',
             location: '뮤지컬 Little Jack'
@@ -63,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-09',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '보이스카드 증정',
             location: '뮤지컬 Little Jack'
@@ -71,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-11',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '보이스카드 증정',
             location: '뮤지컬 Little Jack'
@@ -79,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-16',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -87,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-07-16',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -95,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 리틀잭',
             start: '2025-07-20',
-            className: 'event-time-18',  // 18시 공연 클래스
             time: '18:00',
             detail: '더블적립',
             location: '뮤지컬 Little Jack'
@@ -103,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 리틀잭',
             start: '2025-07-23',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
@@ -111,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭',
             start: '2025-07-26',
-            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
@@ -121,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-01',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '포스터 증정',
             location: '뮤지컬 Little Jack'
@@ -129,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 리틀잭',
             start: '2025-08-03',
-            className: 'event-time-18',  // 18시 공연 클래스
             time: '18:00',
             detail: '포스터 증정',
             location: '뮤지컬 Little Jack'
@@ -137,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-05',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '싱어롱 데이',
             location: '뮤지컬 Little Jack'
@@ -145,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 리틀잭',
             start: '2025-08-09',
-            className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '싱어롱 데이',
             location: '뮤지컬 Little Jack'
@@ -153,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-12',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '럭키드로우',
             location: '뮤지컬 Little Jack'
@@ -161,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 리틀잭',
             start: '2025-08-15',
-            className: 'event-time-14',  // 14시 공연 클래스
             time: '14:00',
             detail: '럭키드로우',
             location: '뮤지컬 Little Jack'
@@ -169,7 +150,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 리틀잭',
             start: '2025-08-16',
-            className: 'event-time-19',  // 19시 공연 클래스
             time: '19:00',
             detail: '스페셜 커튼콜',
             location: '뮤지컬 Little Jack'
@@ -177,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-20',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '스페셜 스탬프 위크',
             location: '뮤지컬 Little Jack'
@@ -185,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 리틀잭',
             start: '2025-08-24',
-            className: 'event-time-14',  // 14시 공연 클래스
             time: '14:00',
             detail: '스페셜 스탬프 위크',
             location: '뮤지컬 Little Jack'
@@ -193,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-08-26',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '사인회',
             location: '뮤지컬 Little Jack'
@@ -201,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 리틀잭',
             start: '2025-08-30',
-            className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '',
             location: '뮤지컬 Little Jack'
@@ -211,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-02',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -219,7 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-09-03',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '스페셜 넘버 위크',
             location: '뮤지컬 Little Jack'
@@ -227,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-04',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -235,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-09-06',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -243,7 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-09-06',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -251,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 리틀잭',
             start: '2025-09-07',
-            className: 'event-time-18',  // 18시 공연 클래스
             time: '18:00',
             detail: '스페셜 넘버 위크',
             location: '뮤지컬 Little Jack'
@@ -259,7 +229,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-09',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -267,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-09-10',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 Little Jack'
@@ -275,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-11',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -283,7 +250,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-12',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -291,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 리틀잭',
             start: '2025-09-13',
-            className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '굿바이 스페셜넘버 데이',
             location: '뮤지컬 Little Jack'
@@ -299,7 +264,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-09-14',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -307,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-09-14',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -315,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-09-16',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '멤버십 데이',
             location: '뮤지컬 Little Jack'
@@ -323,7 +285,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-17',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -331,7 +292,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 리틀잭',
             start: '2025-09-18',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '커튼콜데이',
             location: '뮤지컬 Little Jack'
@@ -339,7 +299,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-19',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -347,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 리틀잭',
             start: '2025-09-20',
-            className: 'event-time-15',  // 15시 공연 클래스
             time: '15:00',
             detail: '마지막 공연 무대인사',
             location: '뮤지컬 Little Jack'
@@ -355,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-09-21',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -363,7 +320,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-09-21',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -371,7 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-25',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -379,7 +334,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-26',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -387,7 +341,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-09-27',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -395,7 +348,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-09-28',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -405,7 +357,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-09-30',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -413,7 +364,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-02',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -421,7 +371,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-10-04',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -429,7 +378,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-10-05',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -438,7 +386,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '🎂 박세미 생일',
             start: '2025-10-08',
-            className: 'event-birthday',  // 생일 특별 클래스
             time: '',
             detail: '🎉 Happy Birthday 박세미! 🎉',
             location: '💖 Special Day 💖',
@@ -447,7 +394,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-09',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -455,7 +401,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-10',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -463,7 +408,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-10-12',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -471,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-10-12',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -479,7 +422,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-14',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -487,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-10-15',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -495,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-10-18',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -503,7 +443,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-10-19',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -511,7 +450,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-21',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -519,7 +457,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-23',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -527,7 +464,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 여단',
             start: '2025-10-25',
-            className: 'event-time-20',  // 20시 공연 클래스
             time: '20:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -535,7 +471,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:30 여단',
             start: '2025-10-29',
-            className: 'event-time-16',  // 16:30 공연 클래스 (16시 클래스 사용)
             time: '16:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -543,7 +478,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 여단',
             start: '2025-10-30',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '뮤지컬 여단'
@@ -553,7 +487,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-11-01',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -561,7 +494,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '16:00 여단',
             start: '2025-11-02',
-            className: 'event-time-16',  // 16시 공연 클래스
             time: '16:00',
             detail: '',
             location: '뮤지컬 여단'
@@ -569,7 +501,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 비망록',
             start: '2025-11-04',
-            className: 'event-time-19',  // 19:30 공연 클래스 (19시 클래스 사용)
             time: '19:30',
             detail: '',
             location: '비망록'
@@ -579,7 +510,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 춤추는 갈매기',
             start: '2025-12-05',
-            className: 'event-time-19',
             time: '19:30',
             detail: '',
             location: '연극 춤추는 갈매기'
@@ -587,7 +517,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2025-12-24',
-            className: 'event-time-20',
             time: '20:00',
             detail: '',
             location: '뮤지컬 판'
@@ -595,7 +524,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2025-12-25',
-            className: 'event-time-14',
             time: '14:00',
             detail: '',
             location: '뮤지컬 판'
@@ -603,7 +531,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2025-12-25',
-            className: 'event-time-18',
             time: '18:00',
             detail: '',
             location: '뮤지컬 판'
@@ -611,7 +538,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 판',
             start: '2025-12-27',
-            className: 'event-time-15',
             time: '15:00',
             detail: '',
             location: '뮤지컬 판'
@@ -619,7 +545,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 판',
             start: '2025-12-27',
-            className: 'event-time-19',
             time: '19:00',
             detail: '',
             location: '뮤지컬 판'
@@ -627,7 +552,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2025-12-31',
-            className: 'event-time-20',
             time: '20:00',
             detail: '',
             location: '뮤지컬 판'
@@ -637,7 +561,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2026-01-01',
-            className: 'event-time-14',
             time: '14:00',
             detail: '',
             location: '뮤지컬 판'
@@ -645,7 +568,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2026-01-01',
-            className: 'event-time-18',
             time: '18:00',
             detail: '',
             location: '뮤지컬 판'
@@ -653,7 +575,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2026-01-04',
-            className: 'event-time-14',
             time: '14:00',
             detail: '',
             location: '뮤지컬 판'
@@ -661,7 +582,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2026-01-04',
-            className: 'event-time-18',
             time: '18:00',
             detail: '',
             location: '뮤지컬 판'
@@ -669,7 +589,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-07',
-            className: 'event-time-20',
             time: '20:00',
             detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
@@ -677,7 +596,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-08',
-            className: 'event-time-20',
             time: '20:00',
             detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
@@ -685,7 +603,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 판',
             start: '2026-01-10',
-            className: 'event-time-15',
             time: '15:00',
             detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
@@ -693,7 +610,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 판',
             start: '2026-01-10',
-            className: 'event-time-19',
             time: '19:00',
             detail: '두 배 적립+신년 달력 증정',
             location: '뮤지컬 판'
@@ -701,7 +617,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-14',
-            className: 'event-time-20',
             time: '20:00',
             detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -709,7 +624,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-15',
-            className: 'event-time-20',
             time: '20:00',
             detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -717,7 +631,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 판',
             start: '2026-01-17',
-            className: 'event-time-15',
             time: '15:00',
             detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -725,7 +638,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 판',
             start: '2026-01-17',
-            className: 'event-time-19',
             time: '19:00',
             detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -733,7 +645,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-20',
-            className: 'event-time-20',
             time: '20:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -741,7 +652,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-23',
-            className: 'event-time-20',
             time: '20:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -749,7 +659,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 판',
             start: '2026-01-24',
-            className: 'event-time-15',
             time: '15:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -757,7 +666,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 판',
             start: '2026-01-24',
-            className: 'event-time-19',
             time: '19:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -765,7 +673,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2026-01-25',
-            className: 'event-time-14',
             time: '14:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -773,7 +680,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2026-01-25',
-            className: 'event-time-18',
             time: '18:00',
             detail: '싱어롱 특별 커튼콜 주간',
             location: '뮤지컬 판'
@@ -781,7 +687,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:30 판',
             start: '2026-01-26',
-            className: 'event-time-19',
             time: '19:30',
             detail: '뮤지컬 <판> 콘서트 | 새해 大 잔치',
             location: '뮤지컬 판'
@@ -790,7 +695,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '🎉 데뷔 15주년',
             start: '2026-01-27',
-            className: 'event-anniversary',
             time: '',
             detail: '🎊 데뷔 15주년 축하합니다! 🎊',
             location: '💖 Special Day 💖',
@@ -799,7 +703,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-27',
-            className: 'event-time-20',
             time: '20:00',
             detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
@@ -807,7 +710,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-01-28',
-            className: 'event-time-20',
             time: '20:00',
             detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
@@ -815,7 +717,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '15:00 판',
             start: '2026-01-31',
-            className: 'event-time-15',
             time: '15:00',
             detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
@@ -823,7 +724,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '19:00 판',
             start: '2026-01-31',
-            className: 'event-time-19',
             time: '19:00',
             detail: '스찍사 카드 증정',
             location: '뮤지컬 판'
@@ -833,7 +733,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-02-05',
-            className: 'event-time-20',
             time: '20:00',
             detail: '이야기꾼 서명회',
             location: '뮤지컬 판'
@@ -841,7 +740,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-02-06',
-            className: 'event-time-20',
             time: '20:00',
             detail: '행운 뽑기날',
             location: '뮤지컬 판'
@@ -849,7 +747,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2026-02-08',
-            className: 'event-time-14',
             time: '14:00',
             detail: '행운 뽑기날',
             location: '뮤지컬 판'
@@ -857,7 +754,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2026-02-08',
-            className: 'event-time-18',
             time: '18:00',
             detail: '행운 뽑기날',
             location: '뮤지컬 판'
@@ -865,39 +761,34 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-02-11',
-            className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
             title: '20:00 판',
             start: '2026-02-13',
-            className: 'event-time-20',
             time: '20:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
             title: '14:00 판',
             start: '2026-02-15',
-            className: 'event-time-14',
             time: '14:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
             title: '18:00 판',
             start: '2026-02-15',
-            className: 'event-time-18',
             time: '18:00',
-            detail: '',
+            detail: '특별 커튼콜 주간',
             location: '뮤지컬 판'
         },
         {
             title: '20:00 판',
             start: '2026-02-19',
-            className: 'event-time-20',
             time: '20:00',
             detail: '',
             location: '뮤지컬 판'
@@ -905,7 +796,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 판',
             start: '2026-02-20',
-            className: 'event-time-20',
             time: '20:00',
             detail: '',
             location: '뮤지컬 판'
@@ -913,7 +803,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '14:00 판',
             start: '2026-02-22',
-            className: 'event-time-14',
             time: '14:00',
             detail: '',
             location: '뮤지컬 판'
@@ -921,7 +810,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '18:00 판',
             start: '2026-02-22',
-            className: 'event-time-18',
             time: '18:00',
             detail: '',
             location: '뮤지컬 판'
@@ -990,16 +878,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (arg.event.extendedProps.location === '연극 춤추는 갈매기') {
                 musicalTitle = '춤추는 갈매기';
             }
-
-            // 시간에 따른 색상 클래스 결정
-            let colorClass = '';
-            if (timeText === '14:00') colorClass = 'event-time-14';
-            else if (timeText === '15:00') colorClass = 'event-time-15';
-            else if (timeText === '16:00' || timeText === '16:30') colorClass = 'event-time-16';
-            else if (timeText === '18:00') colorClass = 'event-time-18';
-            else if (timeText === '19:00' || timeText === '19:30') colorClass = 'event-time-19';
-            else if (timeText === '20:00') colorClass = 'event-time-20';
-            else colorClass = 'event-time-default'; // 기본 클래스 추가
 
             // HTML 요소 생성
             let eventEl = document.createElement('div');
@@ -1176,14 +1054,6 @@ function closeModal() {
     setTimeout(() => {
         modal.style.display = 'none';
     }, 300);
-}
-
-function goBack() {
-    if (history.length > 1) {
-        history.back();
-    } else {
-        window.location.href = '/';
-    }
 }
 
 // 모달 외부 클릭시 닫기
