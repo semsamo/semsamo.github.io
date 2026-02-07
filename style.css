@@ -419,6 +419,145 @@ body {
     color: var(--border);
 }
 
+/* 다른 월 날짜 셀 배경색 제거 */
+.fc-day-other {
+    background-color: transparent !important;
+}
+
+/* FullCalendar 기본 하이라이트 및 선택 배경 제거 */
+.fc-highlight {
+    background: transparent !important;
+}
+
+.fc-daygrid-day-bg {
+    background: transparent !important;
+}
+
+.fc-daygrid-day-frame {
+    background: transparent !important;
+}
+
+.fc-daygrid-day-events {
+    background: transparent !important;
+}
+
+.fc-daygrid-event-harness {
+    background: transparent !important;
+}
+
+/* 토요일/일요일 배경색 초기화 */
+.fc-day-sat,
+.fc-day-sun {
+    background-color: transparent !important;
+}
+
+/* FullCalendar 모든 날짜 셀 배경 초기화 */
+.fc .fc-daygrid-day {
+    background-color: var(--bg-card) !important;
+}
+
+.fc .fc-daygrid-day.fc-day-other {
+    background-color: var(--bg-card) !important;
+}
+
+/* 선택/포커스 상태 배경 제거 */
+.fc-daygrid-day.fc-day-today {
+    background-color: var(--bg-primary) !important;
+}
+
+.fc-daygrid-day:focus,
+.fc-daygrid-day:active,
+.fc-daygrid-day.fc-day-selected {
+    background-color: var(--bg-card) !important;
+}
+
+/* 이벤트 하이라이트 배경 제거 */
+.fc-bg-event {
+    background: transparent !important;
+    opacity: 0 !important;
+}
+
+/* 테이블 셀 배경 초기화 */
+#calendar td,
+#calendar .fc-scrollgrid-sync-table td {
+    background-color: var(--bg-card) !important;
+}
+
+#calendar td.fc-day-other {
+    background-color: var(--bg-card) !important;
+}
+
+/* 추가 FullCalendar 배경 요소 제거 */
+.fc-daygrid-bg-harness,
+.fc-daygrid-day-bg > * {
+    background: transparent !important;
+}
+
+/* 날짜 셀 파란색 테두리/아웃라인 제거 */
+.fc-daygrid-day,
+.fc-daygrid-day-frame,
+.fc-daygrid-day-top,
+.fc-daygrid-day-events,
+.fc-daygrid-event-harness,
+#calendar td {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.fc-daygrid-day:focus,
+.fc-daygrid-day:focus-visible,
+.fc-daygrid-day:active,
+.fc-daygrid-day-frame:focus,
+.fc-daygrid-day-frame:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--border-light) !important;
+}
+
+/* FullCalendar 선택/하이라이트 테두리 제거 */
+.fc .fc-highlight {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.fc-daygrid-day.fc-day-today {
+    border-color: var(--border-light) !important;
+}
+
+/* 모든 파란색 테두리 강제 제거 */
+.fc td,
+.fc th,
+.fc-daygrid-day,
+.fc-scrollgrid,
+.fc-scrollgrid-section,
+.fc-scrollgrid td,
+.fc-scrollgrid-sync-table,
+.fc-scrollgrid-sync-table td {
+    border-color: var(--border-light) !important;
+}
+
+.fc *:focus,
+.fc *:focus-visible,
+.fc *:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--border-light) !important;
+}
+
+/* FullCalendar 기본 파란색 하이라이트 강제 제거 */
+.fc .fc-highlight,
+.fc-highlight {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.fc-daygrid-day-bg,
+.fc-daygrid-day-bg .fc-highlight {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
 .fc-day-today {
     background-color: var(--bg-primary) !important;
 }
@@ -438,7 +577,8 @@ body {
     padding: 0;
 }
 
-.fc-event {
+.fc-event,
+.fc-h-event {
     border: none !important;
     border-radius: 4px !important;
     padding: 3px 6px !important;
@@ -450,6 +590,8 @@ body {
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     box-shadow: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
 
 /* 이벤트 시간별 색상 - 미니멀하게 통일 */
