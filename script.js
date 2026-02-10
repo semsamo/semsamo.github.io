@@ -813,6 +813,34 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '18:00',
             detail: '',
             location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-25',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '20:00 판',
+            start: '2026-02-27',
+            time: '20:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '15:00 판',
+            start: '2026-02-28',
+            time: '15:00',
+            detail: '',
+            location: '뮤지컬 판'
+        },
+        {
+            title: '19:00 판',
+            start: '2026-02-28',
+            time: '19:00',
+            detail: '막공',
+            location: '뮤지컬 판'
         }
     ];
 
