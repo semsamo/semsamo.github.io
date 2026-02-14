@@ -841,6 +841,40 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '19:00',
             detail: '막공',
             location: '뮤지컬 판'
+        },
+
+        // 4월 스케줄 (정희)
+        {
+            title: '20:00 정희',
+            start: '2026-04-01',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '15:00 정희',
+            start: '2026-04-04',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '20:00 정희',
+            start: '2026-04-08',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '20:00 정희',
+            start: '2026-04-10',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
         }
     ];
 
@@ -905,6 +939,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '비망록';
             } else if (arg.event.extendedProps.location === '연극 춤추는 갈매기') {
                 musicalTitle = '춤추는 갈매기';
+            } else if (arg.event.extendedProps.location === '연극 정희') {
+                musicalTitle = '정희';
             }
 
             // HTML 요소 생성
@@ -953,6 +989,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 비망록';
                 } else if (e.location === '연극 춤추는 갈매기') {
                     eventTitle = eventTime + ' 춤추는 갈매기';
+                } else if (e.location === '연극 정희') {
+                    eventTitle = eventTime + ' 정희';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -1057,6 +1095,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '비망록';
             } else if (event.location === '연극 춤추는 갈매기') {
                 musicalTitle = '연극 춤추는 갈매기';
+            } else if (event.location === '연극 정희') {
+                musicalTitle = '연극 정희';
             }
 
             listItem.innerHTML = `
