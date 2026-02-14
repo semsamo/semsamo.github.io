@@ -143,126 +143,108 @@ body {
     border: 1px solid var(--border);
 }
 
-.booking-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 .booking-btn {
-    position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     text-decoration: none;
-    padding: 14px 20px;
-    border-radius: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     transition: all 0.2s ease;
-    overflow: hidden;
     border: 1px solid var(--border);
     cursor: pointer;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
     background: var(--bg-card);
     color: var(--text-primary);
+    min-width: 60px;
 }
 
 .booking-btn:hover {
     background: var(--accent);
     color: white;
     border-color: var(--accent);
+    transform: translateY(-1px);
 }
 
-.booking-btn.yes24,
-.booking-btn.interpark,
-.booking-btn.ticketlink {
-    background: var(--bg-card);
-    color: var(--text-primary);
-    box-shadow: none;
+.booking-btn.yes24:hover {
+    background: #ff6b35;
+    border-color: #ff6b35;
 }
 
-.booking-btn.yes24:hover,
-.booking-btn.interpark:hover,
+.booking-btn.interpark:hover {
+    background: #ff4081;
+    border-color: #ff4081;
+}
+
 .booking-btn.ticketlink:hover {
-    transform: none;
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
+    background: #2196f3;
+    border-color: #2196f3;
 }
 
-/* 뮤지컬별 예매 섹션 */
+/* 예매 테이블 섹션 */
 .booking-section {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.musical-booking {
+.booking-table {
     background: var(--bg-card);
     border-radius: 12px;
-    padding: 20px;
     border: 1px solid var(--border);
-    transition: all 0.2s ease;
+    overflow: hidden;
 }
 
-.musical-booking:hover {
-    border-color: var(--accent);
+.booking-header {
+    background: var(--bg-primary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
 }
 
-.musical-title {
+.booking-header h3 {
     font-size: 15px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 14px;
-    text-align: center;
+    margin: 0;
     letter-spacing: -0.3px;
 }
 
-.booking-info {
-    margin-bottom: 14px;
-}
-
-.performance-period,
-.performance-venue {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin: 4px 0;
-    text-align: center;
-    font-weight: 500;
-}
-
-.performance-period {
-    color: var(--text-secondary);
-}
-
-.performance-venue {
-    color: var(--text-muted);
-}
-
-.booking-btn-icon {
-    font-size: 16px;
-    opacity: 0.7;
-}
-
-.booking-btn-text {
+.booking-row {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.2;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-light);
+    transition: background-color 0.2s ease;
 }
 
-.booking-btn-platform {
-    font-size: 10px;
-    opacity: 0.6;
-    font-weight: 400;
+.booking-row:last-child {
+    border-bottom: none;
 }
 
-.booking-btn-action {
-    font-size: 13px;
+.booking-row:hover {
+    background: var(--bg-primary);
 }
+
+.show-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 40px;
+    margin-right: 16px;
+    letter-spacing: -0.2px;
+    flex-shrink: 0;
+}
+
+.booking-links {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+}
+
 
 /* 아티스트 정보 섹션 */
 .artist-info {
@@ -797,28 +779,34 @@ footer p {
         border-radius: 8px;
     }
 
-    .booking-buttons {
-        flex: 1;
+    .booking-table {
+        margin-top: 16px;
+    }
+
+    .booking-row {
         flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 16px;
         gap: 8px;
     }
 
+    .show-title {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 4px;
+    }
+
+    .booking-links {
+        width: 100%;
+        justify-content: stretch;
+    }
+
     .booking-btn {
-        padding: 10px 14px;
-        font-size: 12px;
-    }
-
-    .booking-btn-icon {
-        font-size: 14px;
-    }
-
-    .booking-btn-platform {
-        font-size: 9px;
-    }
-
-    .booking-btn-action {
+        flex: 1;
+        padding: 10px 12px;
         font-size: 11px;
     }
+
 
     .calendar-container {
         order: 1;
@@ -910,15 +898,14 @@ footer p {
         width: 120px;
     }
 
-    .booking-buttons {
-        width: 100%;
-        flex-direction: row;
-        gap: 8px;
+    .booking-links {
+        gap: 6px;
     }
 
     .booking-btn {
         flex: 1;
-        padding: 10px 8px;
+        padding: 8px 6px;
+        font-size: 10px;
     }
 
     .fc-col-header-cell {
