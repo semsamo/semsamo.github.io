@@ -843,6 +843,22 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '뮤지컬 판'
         },
 
+        // 3월 스케줄 (까라마조프의자매들)
+        {
+            title: '19:00 까라마조프의자매들',
+            start: '2026-03-07',
+            time: '19:00',
+            detail: '2026 링크 더 스페이스 낭독 페스티벌',
+            location: '연극 까라마조프의자매들'
+        },
+        {
+            title: '18:00 까라마조프의자매들',
+            start: '2026-03-08',
+            time: '18:00',
+            detail: '2026 링크 더 스페이스 낭독 페스티벌',
+            location: '연극 까라마조프의자매들'
+        },
+
         // 4월 스케줄 (정희)
         {
             title: '20:00 정희',
@@ -941,6 +957,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '춤추는 갈매기';
             } else if (arg.event.extendedProps.location === '연극 정희') {
                 musicalTitle = '정희';
+            } else if (arg.event.extendedProps.location === '연극 까라마조프의자매들') {
+                musicalTitle = '까라마조프의자매들';
             }
 
             // HTML 요소 생성
@@ -991,6 +1009,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 춤추는 갈매기';
                 } else if (e.location === '연극 정희') {
                     eventTitle = eventTime + ' 정희';
+                } else if (e.location === '연극 까라마조프의자매들') {
+                    eventTitle = eventTime + ' 까라마조프의자매들';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -1097,6 +1117,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '연극 춤추는 갈매기';
             } else if (event.location === '연극 정희') {
                 musicalTitle = '연극 정희';
+            } else if (event.location === '연극 까라마조프의자매들') {
+                musicalTitle = '연극 까라마조프의자매들';
             }
 
             listItem.innerHTML = `
