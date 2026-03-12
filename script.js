@@ -891,6 +891,62 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '20:00',
             detail: '',
             location: '연극 정희'
+        },
+        {
+            title: '20:00 정희',
+            start: '2026-04-16',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '15:00 정희',
+            start: '2026-04-18',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '19:00 정희',
+            start: '2026-04-18',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '20:00 정희',
+            start: '2026-04-22',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '14:00 정희',
+            start: '2026-04-26',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '20:00 정희',
+            start: '2026-04-29',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 정희'
+        },
+        {
+            title: '15:00 정희',
+            start: '2026-05-02',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 정희'
         }
     ];
 
