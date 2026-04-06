@@ -947,6 +947,32 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '15:00',
             detail: '',
             location: '연극 정희'
+        },
+
+        // 5월 스케줄 (나의 별)
+        {
+            title: '14:00 나의 별',
+            start: '2026-05-03',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 나의 별'
+        },
+        {
+            title: '18:00 나의 별',
+            start: '2026-05-03',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 나의 별'
+        },
+        {
+            title: '18:00 나의 별',
+            start: '2026-05-10',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '뮤지컬 나의 별'
         }
     ];
 
@@ -1015,6 +1041,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '정희';
             } else if (arg.event.extendedProps.location === '연극 까라마조프의자매들') {
                 musicalTitle = '까라마조프의자매들';
+            } else if (arg.event.extendedProps.location === '뮤지컬 나의 별') {
+                musicalTitle = '나의 별';
             }
 
             // HTML 요소 생성
@@ -1067,6 +1095,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 정희';
                 } else if (e.location === '연극 까라마조프의자매들') {
                     eventTitle = eventTime + ' 까라마조프의자매들';
+                } else if (e.location === '뮤지컬 나의 별') {
+                    eventTitle = eventTime + ' 나의 별';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -1175,6 +1205,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '연극 정희';
             } else if (event.location === '연극 까라마조프의자매들') {
                 musicalTitle = '연극 까라마조프의자매들';
+            } else if (event.location === '뮤지컬 나의 별') {
+                musicalTitle = '뮤지컬 나의 별';
             }
 
             listItem.innerHTML = `
