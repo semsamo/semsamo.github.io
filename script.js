@@ -1045,9 +1045,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '나의 별';
             }
 
+            // 공연별 색상
+            const showColors = {
+                '뮤지컬 Little Jack':     '#6B8CAE',
+                '뮤지컬 여단':            '#7A9E7E',
+                '뮤지컬 판':              '#8B7BAB',
+                '비망록':                 '#A8896A',
+                '연극 춤추는 갈매기':     '#5E9EA0',
+                '연극 정희':              '#B57A8A',
+                '연극 까라마조프의자매들':'#9E6B6B',
+                '연극 나의 별':           '#A89A5E',
+            };
+            const bgColor = showColors[arg.event.extendedProps.location] || '#2d2d2d';
+
             // HTML 요소 생성
             let eventEl = document.createElement('div');
-            eventEl.style.background = '#2d2d2d';
+            eventEl.style.background = bgColor;
             eventEl.style.padding = '3px 6px';
             eventEl.style.borderRadius = '4px';
             eventEl.style.color = 'white';

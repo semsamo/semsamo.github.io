@@ -576,7 +576,7 @@ body {
     background-color: transparent !important;
 }
 
-/* 이벤트 시간별 색상 - 미니멀하게 통일 */
+/* 이벤트 시간별 색상 - eventContent에서 처리하므로 래퍼는 투명 */
 .fc-event.event-time-14,
 .fc-event.event-time-15,
 .fc-event.event-time-16,
@@ -584,7 +584,7 @@ body {
 .fc-event.event-time-19,
 .fc-event.event-time-20,
 .fc-event.event-time-default {
-    background: var(--event-primary) !important;
+    background: transparent !important;
     color: white !important;
 }
 
@@ -595,7 +595,7 @@ body {
 [data-theme="dark"] .fc-event.event-time-19,
 [data-theme="dark"] .fc-event.event-time-20,
 [data-theme="dark"] .fc-event.event-time-default {
-    background: #4a4a4a !important;
+    background: transparent !important;
     color: #f0f0f0 !important;
 }
 
