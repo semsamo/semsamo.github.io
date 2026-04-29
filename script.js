@@ -999,20 +999,20 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '연극 정희'
         },
         {
-            title: '15:00 정희',
+            title: '15:00 나의 별',
             start: '2026-05-16',
             className: 'event-time-15',
             time: '15:00',
             detail: '',
-            location: '연극 정희'
+            location: '연극 나의 별'
         },
         {
-            title: '19:00 정희',
+            title: '19:00 나의 별',
             start: '2026-05-16',
             className: 'event-time-19',
             time: '19:00',
             detail: '',
-            location: '연극 정희'
+            location: '연극 나의 별'
         },
         {
             title: '20:00 정희',
@@ -1043,14 +1043,6 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             title: '20:00 나의 별',
             start: '2026-05-13',
-            className: 'event-time-20',
-            time: '20:00',
-            detail: '',
-            location: '연극 나의 별'
-        },
-        {
-            title: '20:00 나의 별',
-            start: '2026-05-15',
             className: 'event-time-20',
             time: '20:00',
             detail: '',
