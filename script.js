@@ -983,22 +983,6 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '연극 정희'
         },
         {
-            title: '20:00 정희',
-            start: '2026-05-12',
-            className: 'event-time-20',
-            time: '20:00',
-            detail: '',
-            location: '연극 정희'
-        },
-        {
-            title: '20:00 정희',
-            start: '2026-05-14',
-            className: 'event-time-20',
-            time: '20:00',
-            detail: '',
-            location: '연극 정희'
-        },
-        {
             title: '15:00 나의 별',
             start: '2026-05-16',
             className: 'event-time-15',
@@ -1014,30 +998,7 @@ document.addEventListener('DOMContentLoaded', function () {
             detail: '',
             location: '연극 나의 별'
         },
-        {
-            title: '20:00 정희',
-            start: '2026-05-20',
-            className: 'event-time-20',
-            time: '20:00',
-            detail: '',
-            location: '연극 정희'
-        },
-        {
-            title: '20:00 정희',
-            start: '2026-05-22',
-            className: 'event-time-20',
-            time: '20:00',
-            detail: '',
-            location: '연극 정희'
-        },
-        {
-            title: '15:00 정희',
-            start: '2026-05-25',
-            className: 'event-time-15',
-            time: '15:00',
-            detail: '',
-            location: '연극 정희'
-        },
+    
 
         // 5월 스케줄 (나의 별 추가)
         {
