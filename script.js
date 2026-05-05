@@ -949,6 +949,32 @@ document.addEventListener('DOMContentLoaded', function () {
             location: '연극 정희'
         },
 
+        // 5월 스케줄 (밀양강오딧세이)
+        {
+            title: '20:00 밀양강오딧세이',
+            start: '2026-05-07',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 밀양강오딧세이'
+        },
+        {
+            title: '20:00 밀양강오딧세이',
+            start: '2026-05-08',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 밀양강오딧세이'
+        },
+        {
+            title: '20:00 밀양강오딧세이',
+            start: '2026-05-09',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 밀양강오딧세이'
+        },
+
         // 5월 스케줄 (나의 별)
         {
             title: '14:00 나의 별',
@@ -1166,6 +1192,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '까라마조프의자매들';
             } else if (arg.event.extendedProps.location === '연극 나의 별') {
                 musicalTitle = '나의 별';
+            } else if (arg.event.extendedProps.location === '연극 밀양강오딧세이') {
+                musicalTitle = '밀양강오딧세이';
             }
 
             // 공연별 색상
@@ -1178,6 +1206,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 '연극 정희':              '#B57A8A',
                 '연극 까라마조프의자매들':'#9E6B6B',
                 '연극 나의 별':           '#A89A5E',
+                '연극 밀양강오딧세이':    '#5E8AA8',
             };
             const bgColor = showColors[arg.event.extendedProps.location] || '#2d2d2d';
 
@@ -1233,6 +1262,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 까라마조프의자매들';
                 } else if (e.location === '연극 나의 별') {
                     eventTitle = eventTime + ' 나의 별';
+                } else if (e.location === '연극 밀양강오딧세이') {
+                    eventTitle = eventTime + ' 밀양강오딧세이';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -1343,6 +1374,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '연극 까라마조프의자매들';
             } else if (event.location === '연극 나의 별') {
                 musicalTitle = '연극 나의 별';
+            } else if (event.location === '연극 밀양강오딧세이') {
+                musicalTitle = '연극 밀양강오딧세이';
             }
 
             listItem.innerHTML = `
