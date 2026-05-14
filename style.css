@@ -725,22 +725,25 @@ body {
     text-align: center;
 }
 
-.coupang-banner a {
+.coupang-link {
     display: inline-block;
+    padding: 12px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-.coupang-banner a:hover {
+.coupang-link:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var(--shadow-hover);
-}
-
-.coupang-banner img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 .coupang-notice {
