@@ -718,6 +718,38 @@ body {
     color: var(--text-primary);
 }
 
+/* 쿠팡 파트너스 배너 */
+.coupang-banner {
+    max-width: 728px;
+    margin: 32px auto;
+    text-align: center;
+}
+
+.coupang-banner a {
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coupang-banner a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+.coupang-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.coupang-notice {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    letter-spacing: -0.2px;
+}
+
 /* 푸터 스타일 */
 footer {
     background: transparent;
