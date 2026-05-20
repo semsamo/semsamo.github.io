@@ -1122,6 +1122,194 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '18:00',
             detail: '',
             location: '연극 나의 별'
+        },
+
+        // 6월 스케줄 (나의 별)
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-02',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-04',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '14:00 나의 별',
+            start: '2026-06-07',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '18:00 나의 별',
+            start: '2026-06-07',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-09',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-11',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-12',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '14:00 나의 별',
+            start: '2026-06-14',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '18:00 나의 별',
+            start: '2026-06-14',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-17',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-18',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '15:00 나의 별',
+            start: '2026-06-20',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '19:00 나의 별',
+            start: '2026-06-20',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '18:00 나의 별',
+            start: '2026-06-21',
+            className: 'event-time-18',
+            time: '18:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-23',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-24',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-26',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '15:00 나의 별',
+            start: '2026-06-27',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '19:00 나의 별',
+            start: '2026-06-27',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '20:00 나의 별',
+            start: '2026-06-30',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+
+        // 7월 스케줄 (나의 별)
+        {
+            title: '20:00 나의 별',
+            start: '2026-07-02',
+            className: 'event-time-20',
+            time: '20:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '15:00 나의 별',
+            start: '2026-07-04',
+            className: 'event-time-15',
+            time: '15:00',
+            detail: '',
+            location: '연극 나의 별'
+        },
+        {
+            title: '19:00 나의 별',
+            start: '2026-07-04',
+            className: 'event-time-19',
+            time: '19:00',
+            detail: '막공',
+            location: '연극 나의 별'
         }
     ];
 
