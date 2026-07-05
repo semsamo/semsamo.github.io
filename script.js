@@ -1310,6 +1310,112 @@ document.addEventListener('DOMContentLoaded', function () {
             time: '19:00',
             detail: '막공',
             location: '연극 나의 별'
+        },
+
+        // 9월 스케줄 (광화문연가)
+        {
+            title: '14:00 광화문연가',
+            start: '2026-09-06',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '18:30 광화문연가',
+            start: '2026-09-06',
+            className: 'event-time-18',
+            time: '18:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '14:30 광화문연가',
+            start: '2026-09-09',
+            className: 'event-time-14',
+            time: '14:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '19:30 광화문연가',
+            start: '2026-09-09',
+            className: 'event-time-19',
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '14:00 광화문연가',
+            start: '2026-09-12',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '18:30 광화문연가',
+            start: '2026-09-12',
+            className: 'event-time-18',
+            time: '18:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '19:30 광화문연가',
+            start: '2026-09-15',
+            className: 'event-time-19',
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '19:30 광화문연가',
+            start: '2026-09-18',
+            className: 'event-time-19',
+            time: '19:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '14:00 광화문연가',
+            start: '2026-09-20',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '14:00 광화문연가',
+            start: '2026-09-24',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '18:30 광화문연가',
+            start: '2026-09-24',
+            className: 'event-time-18',
+            time: '18:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '18:30 광화문연가',
+            start: '2026-09-25',
+            className: 'event-time-18',
+            time: '18:30',
+            detail: '',
+            location: '뮤지컬 광화문연가'
+        },
+        {
+            title: '14:00 광화문연가',
+            start: '2026-09-27',
+            className: 'event-time-14',
+            time: '14:00',
+            detail: '',
+            location: '뮤지컬 광화문연가'
         }
     ];
 
@@ -1382,6 +1488,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 musicalTitle = '나의 별';
             } else if (arg.event.extendedProps.location === '밀양강오딧세이') {
                 musicalTitle = '밀양강오딧세이';
+            } else if (arg.event.extendedProps.location === '뮤지컬 광화문연가') {
+                musicalTitle = '광화문연가';
             }
 
             // 공연별 색상
@@ -1395,6 +1503,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 '연극 까라마조프의자매들':'#9E6B6B',
                 '연극 나의 별':           '#A89A5E',
                 '밀양강오딧세이':    '#5E8AA8',
+                '뮤지컬 광화문연가':      '#C08A5E',
             };
             const bgColor = showColors[arg.event.extendedProps.location] || '#2d2d2d';
 
@@ -1452,6 +1561,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventTitle = eventTime + ' 나의 별';
                 } else if (e.location === '밀양강오딧세이') {
                     eventTitle = eventTime + ' 밀양강오딧세이';
+                } else if (e.location === '뮤지컬 광화문연가') {
+                    eventTitle = eventTime + ' 광화문연가';
                 }
                 return eventTitle === event.title && e.start === event.startStr;
             });
@@ -1564,6 +1675,8 @@ function showEventModal(date, dayEvents) {
                 musicalTitle = '연극 나의 별';
             } else if (event.location === '밀양강오딧세이') {
                 musicalTitle = '밀양강오딧세이';
+            } else if (event.location === '뮤지컬 광화문연가') {
+                musicalTitle = '뮤지컬 광화문연가';
             }
 
             listItem.innerHTML = `
