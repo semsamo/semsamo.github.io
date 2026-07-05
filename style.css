@@ -153,6 +153,7 @@ body {
     font-weight: 500;
     font-size: 12px;
     text-align: center;
+    white-space: nowrap;
     transition: all 0.2s ease;
     border: 1px solid var(--border);
     cursor: pointer;
