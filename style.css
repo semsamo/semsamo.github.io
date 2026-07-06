@@ -760,11 +760,11 @@ footer p {
 
     .artist-section {
         width: 100%;
-        order: 2;
+        order: -1;
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 12px;
+        gap: 16px;
         background: var(--bg-card);
         padding: 16px;
         border-radius: 12px;
@@ -780,21 +780,38 @@ footer p {
         border-radius: 8px;
     }
 
+    .booking-section {
+        flex: 1;
+        min-width: 0;
+    }
+
     .booking-table {
-        margin-top: 16px;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+    .booking-header {
+        display: none;
     }
 
     .booking-row {
         flex-direction: column;
         align-items: flex-start;
-        padding: 12px 16px;
-        gap: 8px;
+        padding: 0;
+        gap: 10px;
+        border-bottom: none;
+    }
+
+    .booking-row:hover {
+        background: transparent;
     }
 
     .show-title {
         min-width: auto;
         margin-right: 0;
-        margin-bottom: 4px;
+        font-size: 15px;
+        font-weight: 600;
     }
 
     .booking-links {
@@ -805,7 +822,7 @@ footer p {
     .booking-btn {
         flex: 1;
         padding: 10px 12px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 
@@ -828,9 +845,11 @@ footer p {
     }
 
     .today-btn {
+        width: auto;
         height: 32px;
         padding: 0 12px;
         font-size: 12px;
+        white-space: nowrap;
     }
 
     .fc-daygrid-day {
@@ -890,23 +909,22 @@ footer p {
     }
 
     .artist-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 16px;
+        padding: 14px;
+        gap: 14px;
     }
 
     .artist-image {
-        width: 120px;
+        width: 96px;
     }
 
     .booking-links {
-        gap: 6px;
+        gap: 8px;
     }
 
     .booking-btn {
         flex: 1;
-        padding: 8px 6px;
-        font-size: 10px;
+        padding: 9px 8px;
+        font-size: 11px;
     }
 
     .fc-col-header-cell {
