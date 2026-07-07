@@ -170,11 +170,6 @@ body {
     transform: translateY(-1px);
 }
 
-.booking-btn.yes24:hover {
-    background: #ff6b35;
-    border-color: #ff6b35;
-}
-
 .booking-btn.interpark:hover {
     background: #ff4081;
     border-color: #ff4081;
