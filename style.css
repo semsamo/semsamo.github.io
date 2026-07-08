@@ -100,6 +100,21 @@ body {
 
 
 
+.dday-chip {
+    align-self: center;
+    background: rgba(192, 138, 94, 0.13);
+    color: #B07A4A;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 999px;
+    letter-spacing: -0.2px;
+}
+
+.dday-chip strong {
+    font-weight: 700;
+}
+
 .schedule-wrap {
     display: flex;
     gap: 32px;

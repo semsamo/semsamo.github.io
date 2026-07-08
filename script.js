@@ -23,6 +23,29 @@ function toggleTheme() {
 // 페이지 로드 전 테마 적용 (깜빡임 방지)
 initTheme();
 
+// ===== 첫 공연 D-day 배너 =====
+function initDdayBanner() {
+    const banner = document.getElementById('ddayBanner');
+    if (!banner) return;
+
+    const showTitle = '광화문연가';
+    const firstShow = new Date(2026, 8, 6); // 2026-09-06 첫 공연
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const diffDays = Math.round((firstShow - today) / 86400000);
+
+    if (diffDays > 0) {
+        banner.innerHTML = `🎭 ${showTitle} 첫 공연 <strong>D-${diffDays}</strong>`;
+        banner.style.display = 'inline-block';
+    } else if (diffDays === 0) {
+        banner.innerHTML = `🎉 오늘 ${showTitle} 첫 공연!`;
+        banner.style.display = 'inline-block';
+    }
+    // 첫 공연이 지나면 배너를 표시하지 않음
+}
+
+document.addEventListener('DOMContentLoaded', initDdayBanner);
+
 document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
 
