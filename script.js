@@ -35,7 +35,7 @@ function initDdayBanner() {
     const diffDays = Math.round((firstShow - today) / 86400000);
 
     if (diffDays > 0) {
-        banner.innerHTML = `🎭 ${showTitle} 첫 공연 <strong>D-${diffDays}</strong>`;
+        banner.innerHTML = `🍀 ${showTitle} 첫 공연 <strong>D-${diffDays}</strong>`;
         banner.style.display = 'inline-block';
     } else if (diffDays === 0) {
         banner.innerHTML = `🎉 오늘 ${showTitle} 첫 공연!`;
