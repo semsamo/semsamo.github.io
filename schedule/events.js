@@ -9,6 +9,7 @@ export const SHOWS = {
   nb:{short:'나의 별',full:'연극 나의 별',color:'#A08F4F'},
   mr:{short:'밀양강오딧세이',full:'밀양강오딧세이',color:'#567FA0'},
   gh:{short:'광화문연가',full:'뮤지컬 광화문연가',color:'#B4763F'},
+  wy:{short:'월영루',full:'뮤지컬 리딩공연 [월영루]',color:'#8A6F9E'},
   bd:{short:'Birthday',full:'박세미 생일',color:'#7A2E3A',special:true},
   anv:{short:'데뷔 15주년',full:'데뷔 15주년',color:'#7A2E3A',special:true}
 };
@@ -113,6 +114,7 @@ export const EVENTS = [
 ['2026-10-17','18:30','gh',''],
 ['2026-10-21','14:30','gh',''],
 ['2026-10-21','19:30','gh',''],
+['2026-10-23','16:00','wy',''],
 ['2026-10-24','14:00','gh',''],
 ['2026-10-24','18:30','gh',''],
 ['2026-10-27','19:30','gh',''],
