@@ -10,11 +10,11 @@
     --text-primary: #1A1A1C;
     --text-secondary: #52525B;
     --text-muted: #9B9BA1;
-    --accent: #D97757;
-    --accent-light: #C15F3C;
+    --accent: #1A1A1C;
+    --accent-light: #52525B;
     --border: #E4E4E7;
     --border-light: #F0F0F1;
-    --event-primary: #D97757;
+    --event-primary: #1A1A1C;
     --event-secondary: #52525B;
     --shadow: rgba(0, 0, 0, 0.05);
     --shadow-hover: rgba(0, 0, 0, 0.10);
@@ -27,11 +27,11 @@
     --text-primary: #F4F4F5;
     --text-secondary: #B0B0B5;
     --text-muted: #7E7E84;
-    --accent: #E08B60;
-    --accent-light: #D97757;
+    --accent: #D4D4D8;
+    --accent-light: #B0B0B5;
     --border: #3F3F44;
     --border-light: #333336;
-    --event-primary: #E08B60;
+    --event-primary: #D4D4D8;
     --event-secondary: #B0B0B5;
     --shadow: rgba(0, 0, 0, 0.3);
     --shadow-hover: rgba(0, 0, 0, 0.5);
@@ -123,8 +123,8 @@ body {
 
 .dday-chip {
     align-self: center;
-    background: rgba(217, 119, 87, 0.13);
-    color: #C15F3C;
+    background: rgba(0, 0, 0, 0.06);
+    color: #52525B;
     font-size: 12px;
     font-weight: 500;
     padding: 6px 14px;
