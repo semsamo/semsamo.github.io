@@ -9,7 +9,7 @@ export const SHOWS = {
   nb:{short:'나의 별',full:'연극 나의 별',color:'#A08F4F'},
   mr:{short:'밀양강오딧세이',full:'밀양강오딧세이',color:'#567FA0'},
   gh:{short:'광화문연가',full:'뮤지컬 광화문연가',color:'#1A1A1C'},
-  ghj:{short:'광화문연가 투어',full:'뮤지컬 광화문연가 (전국투어)',color:'#71717A'},
+  ghj:{short:'광화문연가 지방 공연',full:'뮤지컬 광화문연가 (지방 공연)',color:'#71717A'},
   wy:{short:'월영루',full:'뮤지컬 리딩공연 [월영루]',color:'#8A6F9E'},
   bd:{short:'Birthday',full:'박세미 생일',color:'#7A2E3A',special:true},
   anv:{short:'데뷔 15주년',full:'데뷔 15주년',color:'#7A2E3A',special:true}
